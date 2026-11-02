@@ -1,0 +1,134 @@
+{
+  "scope": "Offline DOM/layout/filter checks on actual server HTML with CSS/JS inlined; not a live navigation or Studio test",
+  "live_navigation": "BLOCKED: Chromium net::ERR_BLOCKED_BY_ADMINISTRATOR for localhost; not bypassed",
+  "not_tested": [
+    "Live browser navigation clicks",
+    "Real clipboard permissions",
+    "SearchStax backend or Studio acceptance",
+    "Deployment to Render"
+  ],
+  "checks": [
+    {
+      "name": "All 28 cards visible in offline-rendered dashboard",
+      "passed": true
+    },
+    {
+      "name": "Search filter finds only FD12",
+      "passed": true
+    },
+    {
+      "name": "Clear restores cards and focus",
+      "passed": true
+    },
+    {
+      "name": "Positive controls filter returns six cases",
+      "passed": true
+    },
+    {
+      "name": "Empty-search state displays",
+      "passed": true
+    },
+    {
+      "name": "Saved-message and workflow selectors contain complete inventories",
+      "passed": true
+    },
+    {
+      "name": "SM10 probe rendered with no message-created markup",
+      "passed": true
+    },
+    {
+      "name": "SM10 no probe script execution",
+      "passed": true
+    },
+    {
+      "name": "SM28 probe rendered with no message-created markup",
+      "passed": true
+    },
+    {
+      "name": "SM28 no probe script execution",
+      "passed": true
+    },
+    {
+      "name": "SM29 probe rendered with no message-created markup",
+      "passed": true
+    },
+    {
+      "name": "SM29 no probe script execution",
+      "passed": true
+    },
+    {
+      "name": "Checklist renders all 80 rows",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow at 360px: /error-details",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow at 360px: /error-details/scenarios/integer-overflow",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow at 360px: /error-details/messages/SM31",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow at 360px: /error-details/checklist",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow at 390px: /error-details",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow at 390px: /error-details/scenarios/integer-overflow",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow at 390px: /error-details/messages/SM31",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow at 390px: /error-details/checklist",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow at 768px: /error-details",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow at 768px: /error-details/scenarios/integer-overflow",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow at 768px: /error-details/messages/SM31",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow at 768px: /error-details/checklist",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow at 1440px: /error-details",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow at 1440px: /error-details/scenarios/integer-overflow",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow at 1440px: /error-details/messages/SM31",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow at 1440px: /error-details/checklist",
+      "passed": true
+    },
+    {
+      "name": "No JavaScript errors in offline-rendered pages",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

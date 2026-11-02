@@ -1,0 +1,174 @@
+{
+  "schema": "error-details-guided-checks/v1",
+  "warning": "These are manual/authorized harness checks, not automated product test results.",
+  "cases": [
+    {
+      "id": "WF01",
+      "title": "Existing code, summary and guidance survive",
+      "ac": "AC 1, 6",
+      "scope": "Product regression",
+      "setup": "Use a Failed QA job with a saved technical reason and a same-record baseline of the existing summary/code/guidance.",
+      "steps": [
+        "Read the manager saved message and call the real Studio Backend through authorized access.",
+        "Compare the original properties against the same job after details exposure.",
+        "Open its Studio failure view and inspect Error details as well as existing guidance."
+      ],
+      "expected": "Sanitized saved details are added without replacing or changing the same job's existing code, summary or troubleshooting guidance. A baseline from a different run is not equivalent evidence.",
+      "evidence": "Record environment/build, app/crawler/job IDs, redacted API evidence, UI result and Pass / Fail / Blocked. Do not put real credentials into this site."
+    },
+    {
+      "id": "WF02",
+      "title": "Empty messages after a populated failure",
+      "ac": "AC 5, 6",
+      "scope": "Product regression",
+      "setup": "Prepare failed QA records for SM12, SM13, SM14 and SM16, plus a failed record with visible details.",
+      "steps": [
+        "Open the record with meaningful details first.",
+        "Navigate to each absent/null/empty/whitespace record.",
+        "Wait for the selected record's request to complete and inspect the API and DOM."
+      ],
+      "expected": "No empty heading/panel, stale previous message, literal undefined, perpetual spinner or loading error; the existing summary/guidance stays visible. Confirm the whitespace policy with Product.",
+      "evidence": "Record environment/build, app/crawler/job IDs, redacted API evidence, UI result and Pass / Fail / Blocked. Do not put real credentials into this site."
+    },
+    {
+      "id": "WF03",
+      "title": "Failure A to B to no-details record",
+      "ac": "AC 1, 5, 6",
+      "scope": "Product regression",
+      "setup": "Prepare three distinguishable QA job IDs: A with qa_number_i, B with qa_published_dt, C with no saved message.",
+      "steps": [
+        "Open A, then B, then C using Studio navigation.",
+        "Return to A and reload B directly.",
+        "Check each response/job identity and the displayed field names."
+      ],
+      "expected": "Each page shows only the selected job's details. C does not inherit A/B text. Returning to a failed job retrieves its own historical message.",
+      "evidence": "Record environment/build, app/crawler/job IDs, redacted API evidence, UI result and Pass / Fail / Blocked. Do not put real credentials into this site."
+    },
+    {
+      "id": "WF04",
+      "title": "Recovery does not rewrite historical failure",
+      "ac": "AC 1, 6",
+      "scope": "Product regression",
+      "setup": "Use FD03 or FD04 in a dedicated QA crawler with a reproducible failed run.",
+      "steps": [
+        "Record the failed job ID, code, summary and sanitized saved details.",
+        "Run the corresponding fixed URL with compatible mappings/schema as a new job.",
+        "Confirm successful recovery, then revisit the old failed job."
+      ],
+      "expected": "The fixed run does not fabricate a failure panel. The previous failed run retains its own historical details. Updating a crawler configuration does not relabel the old failure as the new outcome.",
+      "evidence": "Record environment/build, app/crawler/job IDs, redacted API evidence, UI result and Pass / Fail / Blocked. Do not put real credentials into this site."
+    },
+    {
+      "id": "WF05",
+      "title": "Out-of-order responses while switching runs",
+      "ac": "AC 1, 5, 6",
+      "scope": "UI integration harness",
+      "setup": "Use an approved staging UI test harness/network interceptor to delay job A's details response. No origin URL can create this race reliably.",
+      "steps": [
+        "Open A and hold its response.",
+        "Navigate to B and deliver B's response first.",
+        "Release A's delayed response while B remains selected."
+      ],
+      "expected": "A's stale response never overwrites B. The selected run ID, summary, code and details remain aligned; no indefinite loading indicator.",
+      "evidence": "Record environment/build, app/crawler/job IDs, redacted API evidence, UI result and Pass / Fail / Blocked. Do not put real credentials into this site."
+    },
+    {
+      "id": "WF06",
+      "title": "Details retrieval failure and retry",
+      "ac": "AC 5, 6 + robustness",
+      "scope": "Robustness / contract agreement",
+      "setup": "Use an authorized harness to simulate a network error or denied/unavailable response on the actual relevant API.",
+      "steps": [
+        "Load an authorized failed job, then trigger the supported details-request failure mode.",
+        "Observe the error/loading state and use the supported retry action, if available.",
+        "Restore a valid response and verify the selected job's details load."
+      ],
+      "expected": "No stale or secret-bearing fallback details. If summary/guidance are independently loaded, keep them usable. If the whole record request fails, use the product-approved error state rather than falsely showing a healthy/empty record. Exact retry UI/status contract requires Engineering agreement.",
+      "evidence": "Record environment/build, app/crawler/job IDs, redacted API evidence, UI result and Pass / Fail / Blocked. Do not put real credentials into this site."
+    },
+    {
+      "id": "WF07",
+      "title": "Legacy failed record without the new property",
+      "ac": "AC 5, 6",
+      "scope": "Product regression",
+      "setup": "Use an older failed test record where status_message is absent; do not merely set it to an empty value.",
+      "steps": [
+        "Read the older record via the new Studio Backend.",
+        "Load its history entry, then refresh or reopen the page.",
+        "Compare the visible legacy code, summary and guidance."
+      ],
+      "expected": "Backward compatibility: no serialization failure, blank Error details section or loading error. Existing troubleshooting content still explains the failure.",
+      "evidence": "Record environment/build, app/crawler/job IDs, redacted API evidence, UI result and Pass / Fail / Blocked. Do not put real credentials into this site."
+    },
+    {
+      "id": "WF08",
+      "title": "Account, application and role isolation",
+      "ac": "Security regression / AC 6",
+      "scope": "Authorized security regression",
+      "setup": "Use two authorized QA accounts/apps and test users with known permitted/denied access. Never probe customer records.",
+      "steps": [
+        "Read a failed job as a user allowed to access it.",
+        "Switch to the other app/account or the designated non-authorized test user and request the same QA job through the normal UI/API.",
+        "Inspect the response and any cached details."
+      ],
+      "expected": "Existing authorization boundaries also protect technical details. Denied access must not expose the previous account's message. Use the product's established unauthorized/not-found behavior; this case does not prescribe a new status code.",
+      "evidence": "Record environment/build, app/crawler/job IDs, redacted API evidence, UI result and Pass / Fail / Blocked. Do not put real credentials into this site."
+    },
+    {
+      "id": "WF09",
+      "title": "Direct link, reload and session restoration",
+      "ac": "AC 1, 6",
+      "scope": "Product regression",
+      "setup": "Use a known failed QA run with a stable saved message and the product's normal authentication flow.",
+      "steps": [
+        "Open the failed-run URL directly, then reload.",
+        "Repeat after a normal logout/login cycle with the same authorized user.",
+        "Compare the selected app/crawler/job and sanitized details."
+      ],
+      "expected": "The normal authentication flow is retained. The correct failed run and sanitized details load without requiring prior navigation or stale browser state.",
+      "evidence": "Record environment/build, app/crawler/job IDs, redacted API evidence, UI result and Pass / Fail / Blocked. Do not put real credentials into this site."
+    },
+    {
+      "id": "WF10",
+      "title": "Long text, mobile width, zoom and keyboard",
+      "ac": "AC 6 + usability",
+      "scope": "Manual UI validation",
+      "setup": "Use SM10, SM17, SM28, SM29 and SM31 in the real Studio view.",
+      "steps": [
+        "Inspect the actual details DOM for message-created markup or executable links.",
+        "Review at a narrow mobile width and 200% zoom; navigate all relevant controls by keyboard.",
+        "Check wrapping/contained scrolling and the product-approved truncation/expand behavior."
+      ],
+      "expected": "Text-only rendering; no script/markup creation. Long content does not hide the summary/guidance or make navigation unusable. Do not require an expand control if the product design does not have one.",
+      "evidence": "Record environment/build, app/crawler/job IDs, redacted API evidence, UI result and Pass / Fail / Blocked. Do not put real credentials into this site."
+    },
+    {
+      "id": "WF11",
+      "title": "Copy or export must not reintroduce raw secrets",
+      "ac": "AC 4, 6 + regression",
+      "scope": "Conditional product feature",
+      "setup": "Use SM07, SM23, SM32 and SM39. Apply only if the actual product provides a copy/export/share action for details.",
+      "steps": [
+        "Copy/export using the actual supported control.",
+        "Inspect the resulting text/file locally in the authorized QA environment.",
+        "Compare with the sanitized API response and verify all synthetic markers are absent."
+      ],
+      "expected": "Copied/exported text is sanitized too; a safe visible panel must not conceal an unsafe raw clipboard value. Mark Not applicable if no such feature exists; the ticket does not require adding one.",
+      "evidence": "Record environment/build, app/crawler/job IDs, redacted API evidence, UI result and Pass / Fail / Blocked. Do not put real credentials into this site."
+    },
+    {
+      "id": "WF12",
+      "title": "Check all response properties, not just the panel",
+      "ac": "AC 1, 4, 6",
+      "scope": "Product regression",
+      "setup": "Run a synthetic secret case through the real backend, with authorized access to capture the frontend-facing response.",
+      "steps": [
+        "Inspect the entire JSON response including debug/nested properties, not only the selected details path.",
+        "Use the supplied checker on the capture, including the real property path and a same-run baseline.",
+        "Inspect the actual rendered DOM separately; do not use the fixture's safe preview as evidence."
+      ],
+      "expected": "No raw duplicate or encoded synthetic credential in a secondary response property. The displayed field/reason remains useful. The checker can validate known canaries only; UI and source-provenance checks remain separate.",
+      "evidence": "Record environment/build, app/crawler/job IDs, redacted API evidence, UI result and Pass / Fail / Blocked. Do not put real credentials into this site."
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "compared_to": "Crawler-QA-Site-v3-Error-Details.zip",
+  "files": [
+    {
+      "path": "lib/catalog.mjs",
+      "unchanged": true,
+      "sha256": "174f4c3a50d497517ff6204b69a792b033d072147a08c8ebcefd21ca3835cc3f"
+    },
+    {
+      "path": "data/default-manifest.json",
+      "unchanged": true,
+      "sha256": "cd284ae57ecb3c9d4919bb88f283c71a3b615e6f83c41586715e3b1fd3072ac7"
+    },
+    {
+      "path": "data/valid-15000-paths.txt",
+      "unchanged": true,
+      "sha256": "d356010d4e13c11ef6a47c34fcd7fbd07716baa78552cf80594a5e58f067fd75"
+    },
+    {
+      "path": "data/additional-292-paths.txt",
+      "unchanged": true,
+      "sha256": "bb07abd78447e17f60b6d0d2b3eedca1eadac0d070833e1fdf538c6aa0047f59"
+    },
+    {
+      "path": "scripts/check-issues.mjs",
+      "unchanged": true,
+      "sha256": "403592ba27e65827777ab6b63ff8cb883d8c606695f958780ad4b1754f594275"
+    },
+    {
+      "path": "scripts/verify-site.mjs",
+      "unchanged": true,
+      "sha256": "94ef74c3b102546c46f31867c7477b05ca46e97b30108a20a4279c3e525eb423"
+    },
+    {
+      "path": "tests/site.test.mjs",
+      "unchanged": true,
+      "sha256": "2fb35ff2620bda1e27e73235cd759d3210bb5e15c4208780383f9a25d0e88c4b"
+    },
+    {
+      "path": "tests/issues.test.mjs",
+      "unchanged": true,
+      "sha256": "50dfe07f2cddcfec055e5fc252b5d3c1f10ed0d1212c617e1a80febf3b183a71"
+    },
+    {
+      "path": "render.yaml",
+      "unchanged": true,
+      "sha256": "90572a04943220c6391c62543d2f7359eb510d102d0335bd8411b610771fd1cc"
+    },
+    {
+      "path": ".node-version",
+      "unchanged": true,
+      "sha256": "68ca3fba3b7e864770cb61aeb306d4bd4354b68ab4dd38450860c5d823e42a53"
+    },
+    {
+      "path": "public/index.html",
+      "unchanged": true,
+      "sha256": "e99a81da72fa118ad6b7d9253e48d0a3d30d9d580875bd3cc2373e008b8afb88"
+    }
+  ],
+  "all_unchanged": true
+}

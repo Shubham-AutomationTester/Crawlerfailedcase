@@ -1,0 +1,1094 @@
+
+> studio-5619-crawl-lab@1.2.0 test
+> node --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: v4 defines 80 unique cases with distinct IDs
+ok 1 - v4 defines 80 unique cases with distinct IDs
+  ---
+  duration_ms: 38.183253
+  type: 'test'
+  ...
+# Subtest: v4 dashboard includes filters, truthful counters and all categories
+ok 2 - v4 dashboard includes filters, truthful counters and all categories
+  ---
+  duration_ms: 33.47399
+  type: 'test'
+  ...
+# Subtest: checklist and markdown exports cover all IDs without remote scripts
+ok 3 - checklist and markdown exports cover all IDs without remote scripts
+  ---
+  duration_ms: 14.580107
+  type: 'test'
+  ...
+# Subtest: WF01 guided instructions render with noindex and navigation
+ok 4 - WF01 guided instructions render with noindex and navigation
+  ---
+  duration_ms: 5.0679
+  type: 'test'
+  ...
+# Subtest: WF02 guided instructions render with noindex and navigation
+ok 5 - WF02 guided instructions render with noindex and navigation
+  ---
+  duration_ms: 9.40099
+  type: 'test'
+  ...
+# Subtest: WF03 guided instructions render with noindex and navigation
+ok 6 - WF03 guided instructions render with noindex and navigation
+  ---
+  duration_ms: 4.636027
+  type: 'test'
+  ...
+# Subtest: WF04 guided instructions render with noindex and navigation
+ok 7 - WF04 guided instructions render with noindex and navigation
+  ---
+  duration_ms: 4.113998
+  type: 'test'
+  ...
+# Subtest: WF05 guided instructions render with noindex and navigation
+ok 8 - WF05 guided instructions render with noindex and navigation
+  ---
+  duration_ms: 8.257771
+  type: 'test'
+  ...
+# Subtest: WF06 guided instructions render with noindex and navigation
+ok 9 - WF06 guided instructions render with noindex and navigation
+  ---
+  duration_ms: 10.795347
+  type: 'test'
+  ...
+# Subtest: WF07 guided instructions render with noindex and navigation
+ok 10 - WF07 guided instructions render with noindex and navigation
+  ---
+  duration_ms: 9.719711
+  type: 'test'
+  ...
+# Subtest: WF08 guided instructions render with noindex and navigation
+ok 11 - WF08 guided instructions render with noindex and navigation
+  ---
+  duration_ms: 4.860126
+  type: 'test'
+  ...
+# Subtest: WF09 guided instructions render with noindex and navigation
+ok 12 - WF09 guided instructions render with noindex and navigation
+  ---
+  duration_ms: 6.714359
+  type: 'test'
+  ...
+# Subtest: WF10 guided instructions render with noindex and navigation
+ok 13 - WF10 guided instructions render with noindex and navigation
+  ---
+  duration_ms: 5.256044
+  type: 'test'
+  ...
+# Subtest: WF11 guided instructions render with noindex and navigation
+ok 14 - WF11 guided instructions render with noindex and navigation
+  ---
+  duration_ms: 1.883857
+  type: 'test'
+  ...
+# Subtest: WF12 guided instructions render with noindex and navigation
+ok 15 - WF12 guided instructions render with noindex and navigation
+  ---
+  duration_ms: 6.480204
+  type: 'test'
+  ...
+# Subtest: workflow API is descriptive, HEAD-safe, noindex and read-only
+ok 16 - workflow API is descriptive, HEAD-safe, noindex and read-only
+  ---
+  duration_ms: 24.216563
+  type: 'test'
+  ...
+# Subtest: null, absent, empty string and empty array are distinct inputs
+ok 17 - null, absent, empty string and empty array are distinct inputs
+  ---
+  duration_ms: 40.798526
+  type: 'test'
+  ...
+# Subtest: object-valued input emits JSON object, not a fake scalar XPath
+ok 18 - object-valued input emits JSON object, not a fake scalar XPath
+  ---
+  duration_ms: 4.909641
+  type: 'test'
+  ...
+# Subtest: numeric limits are exact strings and fixed values are actual boundaries
+ok 19 - numeric limits are exact strings and fixed values are actual boundaries
+  ---
+  duration_ms: 0.294555
+  type: 'test'
+  ...
+# Subtest: positive zero and false survive source rendering and fixed controls
+ok 20 - positive zero and false survive source rendering and fixed controls
+  ---
+  duration_ms: 55.274346
+  type: 'test'
+  ...
+# Subtest: cardinality cases model distinct one, two and 24-value inputs
+ok 21 - cardinality cases model distinct one, two and 24-value inputs
+  ---
+  duration_ms: 0.607318
+  type: 'test'
+  ...
+# Subtest: mixed numeric array corrects only intended invalid member
+ok 22 - mixed numeric array corrects only intended invalid member
+  ---
+  duration_ms: 0.137768
+  type: 'test'
+  ...
+# Subtest: all sources have field descriptors and do not mutate shared controls
+ok 23 - all sources have field descriptors and do not mutate shared controls
+  ---
+  duration_ms: 0.806309
+  type: 'test'
+  ...
+# Subtest: repository JSON snapshots match current scenario and workflow inventories
+ok 24 - repository JSON snapshots match current scenario and workflow inventories
+  ---
+  duration_ms: 15.434159
+  type: 'test'
+  ...
+# Subtest: checker rejects percent-encoded canary in a secondary response property
+ok 25 - checker rejects percent-encoded canary in a secondary response property
+  ---
+  duration_ms: 1.557775
+  type: 'test'
+  ...
+# Subtest: checker rejects double percent-encoded canary in a secondary response property
+ok 26 - checker rejects double percent-encoded canary in a secondary response property
+  ---
+  duration_ms: 18.378768
+  type: 'test'
+  ...
+# Subtest: checker rejects numeric entity-encoded canary in a secondary response property
+ok 27 - checker rejects numeric entity-encoded canary in a secondary response property
+  ---
+  duration_ms: 0.766268
+  type: 'test'
+  ...
+# Subtest: checker rejects hex entity-encoded canary in a secondary response property
+ok 28 - checker rejects hex entity-encoded canary in a secondary response property
+  ---
+  duration_ms: 0.593597
+  type: 'test'
+  ...
+# Subtest: checker rejects unicode escape-encoded canary in a secondary response property
+ok 29 - checker rejects unicode escape-encoded canary in a secondary response property
+  ---
+  duration_ms: 0.327445
+  type: 'test'
+  ...
+# Subtest: unexpected input type fixtures load without trimming non-strings
+ok 30 - unexpected input type fixtures load without trimming non-strings
+  ---
+  duration_ms: 0.64127
+  type: 'test'
+  ...
+# Subtest: literal null string is different from JSON null
+ok 31 - literal null string is different from JSON null
+  ---
+  duration_ms: 0.340905
+  type: 'test'
+  ...
+# Subtest: checker detects known Basic authorization canary without generic decoding
+ok 32 - checker detects known Basic authorization canary without generic decoding
+  ---
+  duration_ms: 0.213473
+  type: 'test'
+  ...
+# Subtest: tail secret and sensitive-looking field identities are checked independently
+ok 33 - tail secret and sensitive-looking field identities are checked independently
+  ---
+  duration_ms: 1.141856
+  type: 'test'
+  ...
+# Subtest: new dashboard and source-data APIs load with noindex protection
+ok 34 - new dashboard and source-data APIs load with noindex protection
+  ---
+  duration_ms: 113.755425
+  type: 'test'
+  ...
+# Subtest: main dashboard links the new lab and preserves creator credit
+ok 35 - main dashboard links the new lab and preserves creator credit
+  ---
+  duration_ms: 2.86481
+  type: 'test'
+  ...
+# Subtest: exact scenario and saved-message counts and unique IDs
+ok 36 - exact scenario and saved-message counts and unique IDs
+  ---
+  duration_ms: 0.450881
+  type: 'test'
+  ...
+# Subtest: FD00 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 37 - FD00 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 32.996253
+  type: 'test'
+  ...
+# Subtest: FD00 setup page has absolute current-host URLs and noindex
+ok 38 - FD00 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 19.410349
+  type: 'test'
+  ...
+# Subtest: FD01 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 39 - FD01 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 23.504581
+  type: 'test'
+  ...
+# Subtest: FD01 setup page has absolute current-host URLs and noindex
+ok 40 - FD01 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 10.672211
+  type: 'test'
+  ...
+# Subtest: FD02 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 41 - FD02 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 100.537125
+  type: 'test'
+  ...
+# Subtest: FD02 setup page has absolute current-host URLs and noindex
+ok 42 - FD02 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 17.69789
+  type: 'test'
+  ...
+# Subtest: FD03 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 43 - FD03 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 14.059071
+  type: 'test'
+  ...
+# Subtest: FD03 setup page has absolute current-host URLs and noindex
+ok 44 - FD03 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 8.227616
+  type: 'test'
+  ...
+# Subtest: FD04 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 45 - FD04 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 10.090842
+  type: 'test'
+  ...
+# Subtest: FD04 setup page has absolute current-host URLs and noindex
+ok 46 - FD04 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 6.722151
+  type: 'test'
+  ...
+# Subtest: FD05 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 47 - FD05 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 10.431998
+  type: 'test'
+  ...
+# Subtest: FD05 setup page has absolute current-host URLs and noindex
+ok 48 - FD05 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 29.368845
+  type: 'test'
+  ...
+# Subtest: FD06 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 49 - FD06 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 3.116179
+  type: 'test'
+  ...
+# Subtest: FD06 setup page has absolute current-host URLs and noindex
+ok 50 - FD06 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 1.465014
+  type: 'test'
+  ...
+# Subtest: FD07 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 51 - FD07 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 10.729467
+  type: 'test'
+  ...
+# Subtest: FD07 setup page has absolute current-host URLs and noindex
+ok 52 - FD07 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 1.652809
+  type: 'test'
+  ...
+# Subtest: FD08 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 53 - FD08 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 12.503088
+  type: 'test'
+  ...
+# Subtest: FD08 setup page has absolute current-host URLs and noindex
+ok 54 - FD08 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 6.478001
+  type: 'test'
+  ...
+# Subtest: FD09 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 55 - FD09 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 8.617625
+  type: 'test'
+  ...
+# Subtest: FD09 setup page has absolute current-host URLs and noindex
+ok 56 - FD09 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 6.881842
+  type: 'test'
+  ...
+# Subtest: FD10 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 57 - FD10 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 8.544775
+  type: 'test'
+  ...
+# Subtest: FD10 setup page has absolute current-host URLs and noindex
+ok 58 - FD10 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 3.496816
+  type: 'test'
+  ...
+# Subtest: FD11 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 59 - FD11 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 8.169097
+  type: 'test'
+  ...
+# Subtest: FD11 setup page has absolute current-host URLs and noindex
+ok 60 - FD11 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 4.196282
+  type: 'test'
+  ...
+# Subtest: FD12 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 61 - FD12 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 8.924986
+  type: 'test'
+  ...
+# Subtest: FD12 setup page has absolute current-host URLs and noindex
+ok 62 - FD12 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 3.79779
+  type: 'test'
+  ...
+# Subtest: FD13 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 63 - FD13 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 7.2447
+  type: 'test'
+  ...
+# Subtest: FD13 setup page has absolute current-host URLs and noindex
+ok 64 - FD13 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 3.654153
+  type: 'test'
+  ...
+# Subtest: FD14 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 65 - FD14 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 4.802208
+  type: 'test'
+  ...
+# Subtest: FD14 setup page has absolute current-host URLs and noindex
+ok 66 - FD14 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 11.661567
+  type: 'test'
+  ...
+# Subtest: FD15 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 67 - FD15 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 5.743391
+  type: 'test'
+  ...
+# Subtest: FD15 setup page has absolute current-host URLs and noindex
+ok 68 - FD15 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 2.526658
+  type: 'test'
+  ...
+# Subtest: FD16 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 69 - FD16 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 3.498187
+  type: 'test'
+  ...
+# Subtest: FD16 setup page has absolute current-host URLs and noindex
+ok 70 - FD16 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 1.848404
+  type: 'test'
+  ...
+# Subtest: FD17 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 71 - FD17 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 3.325086
+  type: 'test'
+  ...
+# Subtest: FD17 setup page has absolute current-host URLs and noindex
+ok 72 - FD17 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 2.542643
+  type: 'test'
+  ...
+# Subtest: FD18 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 73 - FD18 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 5.823462
+  type: 'test'
+  ...
+# Subtest: FD18 setup page has absolute current-host URLs and noindex
+ok 74 - FD18 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 2.15672
+  type: 'test'
+  ...
+# Subtest: FD19 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 75 - FD19 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 6.254744
+  type: 'test'
+  ...
+# Subtest: FD19 setup page has absolute current-host URLs and noindex
+ok 76 - FD19 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 6.284869
+  type: 'test'
+  ...
+# Subtest: FD20 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 77 - FD20 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 3.249512
+  type: 'test'
+  ...
+# Subtest: FD20 setup page has absolute current-host URLs and noindex
+ok 78 - FD20 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 1.410342
+  type: 'test'
+  ...
+# Subtest: FD21 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 79 - FD21 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 2.36855
+  type: 'test'
+  ...
+# Subtest: FD21 setup page has absolute current-host URLs and noindex
+ok 80 - FD21 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 1.729604
+  type: 'test'
+  ...
+# Subtest: FD22 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 81 - FD22 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 9.368791
+  type: 'test'
+  ...
+# Subtest: FD22 setup page has absolute current-host URLs and noindex
+ok 82 - FD22 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 3.990432
+  type: 'test'
+  ...
+# Subtest: FD23 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 83 - FD23 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 6.958347
+  type: 'test'
+  ...
+# Subtest: FD23 setup page has absolute current-host URLs and noindex
+ok 84 - FD23 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 1.628201
+  type: 'test'
+  ...
+# Subtest: FD24 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 85 - FD24 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 5.921389
+  type: 'test'
+  ...
+# Subtest: FD24 setup page has absolute current-host URLs and noindex
+ok 86 - FD24 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 3.439859
+  type: 'test'
+  ...
+# Subtest: FD25 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 87 - FD25 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 3.438707
+  type: 'test'
+  ...
+# Subtest: FD25 setup page has absolute current-host URLs and noindex
+ok 88 - FD25 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 4.760025
+  type: 'test'
+  ...
+# Subtest: FD26 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 89 - FD26 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 2.286426
+  type: 'test'
+  ...
+# Subtest: FD26 setup page has absolute current-host URLs and noindex
+ok 90 - FD26 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 1.688231
+  type: 'test'
+  ...
+# Subtest: FD27 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 91 - FD27 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 2.973113
+  type: 'test'
+  ...
+# Subtest: FD27 setup page has absolute current-host URLs and noindex
+ok 92 - FD27 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 1.281036
+  type: 'test'
+  ...
+# Subtest: required source is genuinely absent and fixed variant supplies it
+ok 93 - required source is genuinely absent and fixed variant supplies it
+  ---
+  duration_ms: 9.047586
+  type: 'test'
+  ...
+# Subtest: single-value fixture contains two separate DOM values and array entries
+ok 94 - single-value fixture contains two separate DOM values and array entries
+  ---
+  duration_ms: 2.532047
+  type: 'test'
+  ...
+# Subtest: all saved-message pages escape probes and retain navigation
+ok 95 - all saved-message pages escape probes and retain navigation
+  ---
+  duration_ms: 41.473967
+  type: 'test'
+  ...
+# Subtest: source responses are HEAD-compatible and all new routes reject writes
+ok 96 - source responses are HEAD-compatible and all new routes reject writes
+  ---
+  duration_ms: 14.74704
+  type: 'test'
+  ...
+# Subtest: invalid case and invalid variant are explicit errors
+ok 97 - invalid case and invalid variant are explicit errors
+  ---
+  duration_ms: 5.309635
+  type: 'test'
+  ...
+# Subtest: robots excludes new instruction pages but not new source documents
+ok 98 - robots excludes new instruction pages but not new source documents
+  ---
+  duration_ms: 1.3368
+  type: 'test'
+  ...
+# Subtest: new fixtures do not enter original manifest or sitemaps
+ok 99 - new fixtures do not enter original manifest or sitemaps
+  ---
+  duration_ms: 79.210856
+  type: 'test'
+  ...
+# Subtest: SM01 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 100 - SM01 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 1.095025
+  type: 'test'
+  ...
+# Subtest: SM02 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 101 - SM02 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.181043
+  type: 'test'
+  ...
+# Subtest: SM03 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 102 - SM03 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.170388
+  type: 'test'
+  ...
+# Subtest: SM04 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 103 - SM04 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.143527
+  type: 'test'
+  ...
+# Subtest: SM05 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 104 - SM05 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.129946
+  type: 'test'
+  ...
+# Subtest: SM06 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 105 - SM06 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.166963
+  type: 'test'
+  ...
+# Subtest: SM07 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 106 - SM07 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.288285
+  type: 'test'
+  ...
+# Subtest: SM08 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 107 - SM08 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.254565
+  type: 'test'
+  ...
+# Subtest: SM09 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 108 - SM09 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.132871
+  type: 'test'
+  ...
+# Subtest: SM10 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 109 - SM10 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.117928
+  type: 'test'
+  ...
+# Subtest: SM11 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 110 - SM11 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.11262
+  type: 'test'
+  ...
+# Subtest: SM12 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 111 - SM12 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.090657
+  type: 'test'
+  ...
+# Subtest: SM13 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 112 - SM13 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.09322
+  type: 'test'
+  ...
+# Subtest: SM14 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 113 - SM14 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.088694
+  type: 'test'
+  ...
+# Subtest: SM15 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 114 - SM15 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.115805
+  type: 'test'
+  ...
+# Subtest: SM16 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 115 - SM16 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.091018
+  type: 'test'
+  ...
+# Subtest: SM17 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 116 - SM17 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.35746
+  type: 'test'
+  ...
+# Subtest: SM18 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 117 - SM18 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.10593
+  type: 'test'
+  ...
+# Subtest: SM19 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 118 - SM19 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.106711
+  type: 'test'
+  ...
+# Subtest: SM20 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 119 - SM20 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.159291
+  type: 'test'
+  ...
+# Subtest: SM21 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 120 - SM21 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.110076
+  type: 'test'
+  ...
+# Subtest: SM22 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 121 - SM22 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.097618
+  type: 'test'
+  ...
+# Subtest: SM23 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 122 - SM23 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.102195
+  type: 'test'
+  ...
+# Subtest: SM24 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 123 - SM24 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.113191
+  type: 'test'
+  ...
+# Subtest: SM25 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 124 - SM25 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.108344
+  type: 'test'
+  ...
+# Subtest: SM26 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 125 - SM26 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.100702
+  type: 'test'
+  ...
+# Subtest: SM27 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 126 - SM27 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.300144
+  type: 'test'
+  ...
+# Subtest: SM28 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 127 - SM28 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.124067
+  type: 'test'
+  ...
+# Subtest: SM29 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 128 - SM29 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.098869
+  type: 'test'
+  ...
+# Subtest: SM30 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 129 - SM30 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.10552
+  type: 'test'
+  ...
+# Subtest: SM31 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 130 - SM31 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.471764
+  type: 'test'
+  ...
+# Subtest: SM32 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 131 - SM32 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.399434
+  type: 'test'
+  ...
+# Subtest: SM33 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 132 - SM33 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.102916
+  type: 'test'
+  ...
+# Subtest: SM34 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 133 - SM34 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.091408
+  type: 'test'
+  ...
+# Subtest: SM35 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 134 - SM35 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.086831
+  type: 'test'
+  ...
+# Subtest: SM36 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 135 - SM36 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.126751
+  type: 'test'
+  ...
+# Subtest: SM37 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 136 - SM37 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.092119
+  type: 'test'
+  ...
+# Subtest: SM38 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 137 - SM38 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.102745
+  type: 'test'
+  ...
+# Subtest: SM39 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 138 - SM39 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.160432
+  type: 'test'
+  ...
+# Subtest: SM40 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 139 - SM40 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.111509
+  type: 'test'
+  ...
+# Subtest: checker rejects missing details for a nonempty saved message
+ok 140 - checker rejects missing details for a nonempty saved message
+  ---
+  duration_ms: 0.289868
+  type: 'test'
+  ...
+# Subtest: checker rejects a non-string details object
+ok 141 - checker rejects a non-string details object
+  ---
+  duration_ms: 0.227003
+  type: 'test'
+  ...
+# Subtest: checker detects raw secret duplication outside the details property
+ok 142 - checker detects raw secret duplication outside the details property
+  ---
+  duration_ms: 0.273193
+  type: 'test'
+  ...
+# Subtest: checker flags stale details for empty-message fixture
+ok 143 - checker flags stale details for empty-message fixture
+  ---
+  duration_ms: 0.233623
+  type: 'test'
+  ...
+# Subtest: checker verifies original code, summary and guidance and fails when changed
+ok 144 - checker verifies original code, summary and guidance and fails when changed
+  ---
+  duration_ms: 0.406585
+  type: 'test'
+  ...
+# Subtest: checker fails setup with unresolved response path or missing preservation baseline
+ok 145 - checker fails setup with unresolved response path or missing preservation baseline
+  ---
+  duration_ms: 0.487046
+  type: 'test'
+  ...
+# Subtest: collector returns 25 unique issues with pages 10, 10, 5
+ok 146 - collector returns 25 unique issues with pages 10, 10, 5
+  ---
+  duration_ms: 67.057732
+  type: 'test'
+  ...
+# Subtest: cursor loop is incomplete, never a healthy empty result
+ok 147 - cursor loop is incomplete, never a healthy empty result
+  ---
+  duration_ms: 21.28396
+  type: 'test'
+  ...
+# Subtest: missing next_cursor field does not silently truncate retrieval
+ok 148 - missing next_cursor field does not silently truncate retrieval
+  ---
+  duration_ms: 6.382447
+  type: 'test'
+  ...
+# Subtest: HTTP 429 and 503 are data retrieval failures, not zero issues
+ok 149 - HTTP 429 and 503 are data retrieval failures, not zero issues
+  ---
+  duration_ms: 19.27313
+  type: 'test'
+  ...
+# Subtest: expired data with empty items is not a clean run
+ok 150 - expired data with empty items is not a clean run
+  ---
+  duration_ms: 12.571723
+  type: 'test'
+  ...
+# Subtest: unknown availability requires review even for a complete empty result
+ok 151 - unknown availability requires review even for a complete empty result
+  ---
+  duration_ms: 19.201943
+  type: 'test'
+  ...
+# Subtest: duplicates, missing URLs and successful URLs appearing are failures
+ok 152 - duplicates, missing URLs and successful URLs appearing are failures
+  ---
+  duration_ms: 0.348386
+  type: 'test'
+  ...
+# Subtest: unknown conditional visibility prevents a premature PASS
+ok 153 - unknown conditional visibility prevents a premature PASS
+  ---
+  duration_ms: 1.261727
+  type: 'test'
+  ...
+# Subtest: filters are preserved across cursors and checked locally
+ok 154 - filters are preserved across cursors and checked locally
+  ---
+  duration_ms: 19.17313
+  type: 'test'
+  ...
+# Subtest: mismatched oracle filters are rejected
+ok 155 - mismatched oracle filters are rejected
+  ---
+  duration_ms: 0.935554
+  type: 'test'
+  ...
+# Subtest: provider parity ignores record order but compares outcomes
+ok 156 - provider parity ignores record order but compares outcomes
+  ---
+  duration_ms: 0.447045
+  type: 'test'
+  ...
+# Subtest: unavailable providers cannot pass parity
+ok 157 - unavailable providers cannot pass parity
+  ---
+  duration_ms: 0.180253
+  type: 'test'
+  ...
+# Subtest: collector scale: 10,005 unique outcomes across 1,001 pages
+ok 158 - collector scale: 10,005 unique outcomes across 1,001 pages
+  ---
+  duration_ms: 1426.741468
+  type: 'test'
+  ...
+# Subtest: exactly 15,000 valid + 292 additional unique fixture URLs
+ok 159 - exactly 15,000 valid + 292 additional unique fixture URLs
+  ---
+  duration_ms: 117.761725
+  type: 'test'
+  ...
+# Subtest: profile isolation and boundary counts
+ok 160 - profile isolation and boundary counts
+  ---
+  duration_ms: 1.652237
+  type: 'test'
+  ...
+# Subtest: extended issue scale leaves the valid 15,000 untouched
+ok 161 - extended issue scale leaves the valid 15,000 untouched
+  ---
+  duration_ms: 59.128856
+  type: 'test'
+  ...
+# Subtest: reject invalid environment values
+ok 162 - reject invalid environment values
+  ---
+  duration_ms: 0.374907
+  type: 'test'
+  ...
+# Subtest: dashboard, static assets and health are reachable
+ok 163 - dashboard, static assets and health are reachable
+  ---
+  duration_ms: 59.311203
+  type: 'test'
+  ...
+# Subtest: baseline first, middle and last have unique server-rendered content
+ok 164 - baseline first, middle and last have unique server-rendered content
+  ---
+  duration_ms: 8.56811
+  type: 'test'
+  ...
+# Subtest: invalid IDs and unknown query strings do not create extra valid URLs
+ok 165 - invalid IDs and unknown query strings do not create extra valid URLs
+  ---
+  duration_ms: 11.595737
+  type: 'test'
+  ...
+# Subtest: HEAD has no body and does not count fixture GET observations
+ok 166 - HEAD has no body and does not count fixture GET observations
+  ---
+  duration_ms: 12.75579
+  type: 'test'
+  ...
+# Subtest: all eight persistent HTTP codes stay failures across requests
+ok 167 - all eight persistent HTTP codes stay failures across requests
+  ---
+  duration_ms: 23.06366
+  type: 'test'
+  ...
+# Subtest: retry HEAD does not consume the failure; GET goes 503 then 200
+ok 168 - retry HEAD does not consume the failure; GET goes 503 then 200
+  ---
+  duration_ms: 15.433278
+  type: 'test'
+  ...
+# Subtest: 429 retry returns Retry-After and recovers
+ok 169 - 429 retry returns Retry-After and recovers
+  ---
+  duration_ms: 5.478811
+  type: 'test'
+  ...
+# Subtest: four successful redirect codes lead to existing valid documents
+ok 170 - four successful redirect codes lead to existing valid documents
+  ---
+  duration_ms: 13.093731
+  type: 'test'
+  ...
+# Subtest: broken redirect targets a known 404; redirect cycle has two nodes
+ok 171 - broken redirect targets a known 404; redirect cycle has two nodes
+  ---
+  duration_ms: 8.957909
+  type: 'test'
+  ...
+# Subtest: incremental validators: ETag, weak ETag, Last-Modified and precedence
+ok 172 - incremental validators: ETag, weak ETag, Last-Modified and precedence
+  ---
+  duration_ms: 5.307232
+  type: 'test'
+  ...
+# Subtest: robots, noindex meta and response-header fixtures are real
+ok 173 - robots, noindex meta and response-header fixtures are real
+  ---
+  duration_ms: 4.842069
+  type: 'test'
+  ...
+# Subtest: all encoded, mixed-case, long and query fixtures respond 200
+ok 174 - all encoded, mixed-case, long and query fixtures respond 200
+  ---
+  duration_ms: 6.279751
+  type: 'test'
+  ...
+# Subtest: empty HTML, deliberately invalid PDF MIME and large-body fixtures
+ok 175 - empty HTML, deliberately invalid PDF MIME and large-body fixtures
+  ---
+  duration_ms: 3.403174
+  type: 'test'
+  ...
+# Subtest: delayed endpoint is nonblocking and releases its slot
+ok 176 - delayed endpoint is nonblocking and releases its slot
+  ---
+  duration_ms: 46.253376
+  type: 'test'
+  ...
+# Subtest: admin reset is POST-only and authenticated, and changes boot ID
+ok 177 - admin reset is POST-only and authenticated, and changes boot ID
+  ---
+  duration_ms: 10.388482
+  type: 'test'
+  ...
+# Subtest: manifest and observation validation are deterministic
+ok 178 - manifest and observation validation are deterministic
+  ---
+  duration_ms: 72.68647
+  type: 'test'
+  ...
+# Subtest: HTML-only discovery finds every fixture without visiting the dashboard
+ok 179 - HTML-only discovery finds every fixture without visiting the dashboard
+  ---
+  duration_ms: 168.276692
+  type: 'test'
+  ...
+# Subtest: mixed sitemap shards enumerate every fixture exactly once and escape queries
+ok 180 - mixed sitemap shards enumerate every fixture exactly once and escape queries
+  ---
+  duration_ms: 32.899617
+  type: 'test'
+  ...
+1..180
+# tests 180
+# suites 0
+# pass 180
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1780.245371

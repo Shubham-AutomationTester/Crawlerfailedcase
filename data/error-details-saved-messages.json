@@ -1,0 +1,886 @@
+{
+  "schema": "saved-message-test-inputs/v1",
+  "warning": "Authorized test inputs only, not a SearchStax API contract. Synthetic credentials only.",
+  "cases": [
+    {
+      "id": "SM01",
+      "title": "One unknown field",
+      "manager_saved_fields": {
+        "status_message": "Schema validation failed: unknown field 'qa_unmapped_probe'."
+      },
+      "message_state": "nonempty",
+      "expected": {
+        "show_details": true,
+        "must_contain": [
+          "qa_unmapped_probe"
+        ],
+        "must_not_contain": [],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "Schema validation failed: unknown field 'qa_unmapped_probe'.",
+      "note": "Wording and redaction markers are illustrative. Compare to the actual saved message and the agreed sanitization policy.",
+      "ac": "AC 1, 2, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM02",
+      "title": "Several unknown fields",
+      "manager_saved_fields": {
+        "status_message": "Schema validation failed: unknown fields 'qa_unmapped_probe' and 'qa_other_unmapped_probe'."
+      },
+      "message_state": "nonempty",
+      "expected": {
+        "show_details": true,
+        "must_contain": [
+          "qa_unmapped_probe",
+          "qa_other_unmapped_probe"
+        ],
+        "must_not_contain": [],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "Schema validation failed: unknown fields 'qa_unmapped_probe' and 'qa_other_unmapped_probe'.",
+      "note": "Wording and redaction markers are illustrative. Compare to the actual saved message and the agreed sanitization policy.",
+      "ac": "AC 1, 2, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM03",
+      "title": "Required value missing",
+      "manager_saved_fields": {
+        "status_message": "Document rejected: missing required field 'qa_required_s'."
+      },
+      "message_state": "nonempty",
+      "expected": {
+        "show_details": true,
+        "must_contain": [
+          "qa_required_s",
+          "required"
+        ],
+        "must_not_contain": [],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "Document rejected: missing required field 'qa_required_s'.",
+      "note": "Wording and redaction markers are illustrative. Compare to the actual saved message and the agreed sanitization policy.",
+      "ac": "AC 1, 3, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM04",
+      "title": "Single-valued destination",
+      "manager_saved_fields": {
+        "status_message": "Document rejected: multiple values encountered for single-valued field 'qa_single_s': [Cardiology, Neurology]."
+      },
+      "message_state": "nonempty",
+      "expected": {
+        "show_details": true,
+        "must_contain": [
+          "qa_single_s",
+          "multiple",
+          "single-valued"
+        ],
+        "must_not_contain": [],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "Document rejected: multiple values encountered for single-valued field 'qa_single_s': [Cardiology, Neurology].",
+      "note": "Wording and redaction markers are illustrative. Compare to the actual saved message and the agreed sanitization policy.",
+      "ac": "AC 1, 3, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM05",
+      "title": "Integer validation",
+      "manager_saved_fields": {
+        "status_message": "Document rejected: field 'qa_number_i' cannot parse 'NOT_AN_INTEGER' as an integer."
+      },
+      "message_state": "nonempty",
+      "expected": {
+        "show_details": true,
+        "must_contain": [
+          "qa_number_i",
+          "integer"
+        ],
+        "must_not_contain": [],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "Document rejected: field 'qa_number_i' cannot parse 'NOT_AN_INTEGER' as an integer.",
+      "note": "Wording and redaction markers are illustrative. Compare to the actual saved message and the agreed sanitization policy.",
+      "ac": "AC 1, 3, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM06",
+      "title": "Date validation",
+      "manager_saved_fields": {
+        "status_message": "Document rejected: field 'qa_published_dt' has an invalid date: NOT_A_DATE."
+      },
+      "message_state": "nonempty",
+      "expected": {
+        "show_details": true,
+        "must_contain": [
+          "qa_published_dt",
+          "invalid date"
+        ],
+        "must_not_contain": [],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "Document rejected: field 'qa_published_dt' has an invalid date: NOT_A_DATE.",
+      "note": "Wording and redaction markers are illustrative. Compare to the actual saved message and the agreed sanitization policy.",
+      "ac": "AC 1, 3, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM07",
+      "title": "Sample URL: user info and query secrets",
+      "manager_saved_fields": {
+        "status_message": "Document rejected: field 'qa_number_i' cannot parse an integer. Sample URL: https://QA_ONLY_USER:QA_ONLY_PASSWORD@your-service.onrender.com/error-fixtures/sample-url?access_token=QA_ONLY_ACCESS_TOKEN&api_key=QA_ONLY_API_KEY&doc=sample"
+      },
+      "message_state": "nonempty",
+      "expected": {
+        "show_details": true,
+        "must_contain": [
+          "qa_number_i",
+          "/error-fixtures/sample-url"
+        ],
+        "must_not_contain": [
+          "QA_ONLY_USER",
+          "QA_ONLY_PASSWORD",
+          "QA_ONLY_ACCESS_TOKEN",
+          "QA_ONLY_API_KEY"
+        ],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "Document rejected: field 'qa_number_i' cannot parse an integer. Sample URL: https://YOUR-SERVICE.onrender.com/error-fixtures/sample-url?doc=sample",
+      "note": "Wording and redaction markers are illustrative. Compare to the actual saved message and the agreed sanitization policy.",
+      "ac": "AC 1, 4, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM08",
+      "title": "Encoded, repeated and mixed-case parameters",
+      "manager_saved_fields": {
+        "status_message": "Field 'qa_number_i' is invalid. Sample URL: https://YOUR-SERVICE.onrender.com/error-fixtures/sample-url?%61ccess_token=QA_ONLY_ENCODED_TOKEN&API_KEY=QA_ONLY_MIXED_KEY&token=QA_ONLY_REPEAT_A&token=QA_ONLY_REPEAT_B&signature=QA_ONLY_SIGNATURE&doc=sample"
+      },
+      "message_state": "nonempty",
+      "expected": {
+        "show_details": true,
+        "must_contain": [
+          "qa_number_i",
+          "/error-fixtures/sample-url"
+        ],
+        "must_not_contain": [
+          "QA_ONLY_ENCODED_TOKEN",
+          "QA_ONLY_MIXED_KEY",
+          "QA_ONLY_REPEAT_A",
+          "QA_ONLY_REPEAT_B",
+          "QA_ONLY_SIGNATURE"
+        ],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "Field 'qa_number_i' is invalid. Sample URL: https://YOUR-SERVICE.onrender.com/error-fixtures/sample-url?doc=sample",
+      "note": "Wording and redaction markers are illustrative. Compare to the actual saved message and the agreed sanitization policy.",
+      "ac": "AC 1, 4, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM09",
+      "title": "Credentials outside a URL",
+      "manager_saved_fields": {
+        "status_message": "Document rejected: field 'qa_required_s' is missing. Authorization: Bearer QA_ONLY_BEARER_SECRET; username=QA_ONLY_USERNAME; password=QA_ONLY_PASSWORD_VALUE; client_secret=QA_ONLY_CLIENT_SECRET."
+      },
+      "message_state": "nonempty",
+      "expected": {
+        "show_details": true,
+        "must_contain": [
+          "qa_required_s",
+          "missing"
+        ],
+        "must_not_contain": [
+          "QA_ONLY_BEARER_SECRET",
+          "QA_ONLY_USERNAME",
+          "QA_ONLY_PASSWORD_VALUE",
+          "QA_ONLY_CLIENT_SECRET"
+        ],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "Document rejected: field 'qa_required_s' is missing. Authorization: [REDACTED]; username=[REDACTED]; password=[REDACTED]; client_secret=[REDACTED].",
+      "note": "Wording and redaction markers are illustrative. Compare to the actual saved message and the agreed sanitization policy.",
+      "ac": "AC 1, 4, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM10",
+      "title": "Markup must render as plain text",
+      "manager_saved_fields": {
+        "status_message": "Validation failed for <b>qa_single_s</b>. Literal probe: <img src=x onerror=\"window.__qa_error_details_probe=true\">. Expected one value."
+      },
+      "message_state": "nonempty",
+      "expected": {
+        "show_details": true,
+        "must_contain": [
+          "qa_single_s",
+          "Expected one value"
+        ],
+        "must_not_contain": [],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "Validation failed for <b>qa_single_s</b>. Literal probe: <img src=x onerror=\"window.__qa_error_details_probe=true\">. Expected one value.",
+      "note": "Harmless local DOM probe only. Inspect the real Studio details DOM: no b/img node may be created from this message; no probe code may execute. A CSP blocking execution does not prove text-only rendering. The CLI cannot verify DOM safety.",
+      "ac": "AC 1, 4, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM11",
+      "title": "Multiline message with several fields",
+      "manager_saved_fields": {
+        "status_message": "Validation failed:\n- qa_number_i: invalid integer.\n- qa_published_dt: invalid date.\n- qa_required_s: missing required value."
+      },
+      "message_state": "nonempty",
+      "expected": {
+        "show_details": true,
+        "must_contain": [
+          "qa_number_i",
+          "qa_published_dt",
+          "qa_required_s",
+          "invalid integer",
+          "invalid date",
+          "required"
+        ],
+        "must_not_contain": [],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "Validation failed:\n- qa_number_i: invalid integer.\n- qa_published_dt: invalid date.\n- qa_required_s: missing required value.",
+      "note": "Wording and redaction markers are illustrative. Compare to the actual saved message and the agreed sanitization policy.",
+      "ac": "AC 1, 3, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM12",
+      "title": "Saved property absent",
+      "manager_saved_fields": {},
+      "message_state": "absent",
+      "expected": {
+        "show_details": false,
+        "must_contain": [],
+        "must_not_contain": [],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "",
+      "note": "Remove status_message from the authorized test record; merging an empty object does NOT delete an existing value. No Error details section or loading error. Existing summary and guidance remain.",
+      "ac": "AC 5, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM13",
+      "title": "Saved message is null",
+      "manager_saved_fields": {
+        "status_message": null
+      },
+      "message_state": "null",
+      "expected": {
+        "show_details": false,
+        "must_contain": [],
+        "must_not_contain": [],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "",
+      "note": "A failed record with status_message=null must retain its existing summary/guidance without an empty Error details section.",
+      "ac": "AC 5, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM14",
+      "title": "Saved message is an empty string",
+      "manager_saved_fields": {
+        "status_message": ""
+      },
+      "message_state": "empty_or_whitespace",
+      "expected": {
+        "show_details": false,
+        "must_contain": [],
+        "must_not_contain": [],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "",
+      "note": "A failed record with status_message=\"\" must retain its existing summary/guidance without an empty Error details section.",
+      "ac": "AC 5, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM15",
+      "title": "Two sample URLs",
+      "manager_saved_fields": {
+        "status_message": "qa_number_i: invalid integer. URL 1: https://YOUR-SERVICE.onrender.com/error-fixtures/invalid-integer?token=QA_ONLY_FIRST_URL_SECRET ; URL 2: https://YOUR-SERVICE.onrender.com/error-fixtures/sample-url?password=QA_ONLY_SECOND_URL_SECRET"
+      },
+      "message_state": "nonempty",
+      "expected": {
+        "show_details": true,
+        "must_contain": [
+          "qa_number_i",
+          "/error-fixtures/invalid-integer",
+          "/error-fixtures/sample-url"
+        ],
+        "must_not_contain": [
+          "QA_ONLY_FIRST_URL_SECRET",
+          "QA_ONLY_SECOND_URL_SECRET"
+        ],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "qa_number_i: invalid integer. URL 1: https://YOUR-SERVICE.onrender.com/error-fixtures/invalid-integer ; URL 2: https://YOUR-SERVICE.onrender.com/error-fixtures/sample-url",
+      "note": "Wording and redaction markers are illustrative. Compare to the actual saved message and the agreed sanitization policy.",
+      "ac": "AC 1, 4, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM16",
+      "title": "Whitespace-only saved message",
+      "manager_saved_fields": {
+        "status_message": " \n\t\r "
+      },
+      "message_state": "empty_or_whitespace",
+      "expected": {
+        "show_details": false,
+        "must_contain": [],
+        "must_not_contain": [],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "",
+      "note": "Whitespace-only content is empty for this QA expectation: hide Error details and preserve existing summary/guidance. Confirm with Product if the implementation defines a different empty-value contract.",
+      "ac": "AC 5, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM17",
+      "title": "Long diagnostic message",
+      "manager_saved_fields": {
+        "status_message": "Validation failed: qa_number_i is not an integer.\nRepeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. \nAffected field: qa_number_i."
+      },
+      "message_state": "nonempty",
+      "expected": {
+        "show_details": true,
+        "must_contain": [
+          "qa_number_i"
+        ],
+        "must_not_contain": [],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "Validation failed: qa_number_i is not an integer.\nRepeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. Repeated diagnostic context; no real customer data. \nAffected field: qa_number_i.",
+      "note": "UI must remain usable at mobile and desktop sizes. Apply the product-approved length/truncation rule; this fixture does not prescribe an unsupported maximum or require unbounded rendering.",
+      "ac": "AC 1, 4, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM18",
+      "title": "Saved message without a URL",
+      "manager_saved_fields": {
+        "status_message": "Processing failed: unable to validate field qa_number_i. No sample URL was recorded."
+      },
+      "message_state": "nonempty",
+      "expected": {
+        "show_details": true,
+        "must_contain": [
+          "qa_number_i"
+        ],
+        "must_not_contain": [],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "Processing failed: unable to validate field qa_number_i. No sample URL was recorded.",
+      "note": "Show saved details without inventing a sample URL or an additional remediation sentence. Existing guidance remains the authoritative remediation.",
+      "ac": "AC 1, 4, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM19",
+      "title": "Credentials in a JSON-shaped diagnostic string",
+      "manager_saved_fields": {
+        "status_message": "qa_number_i: invalid integer. Context: {\"password\":\"QA_ONLY_JSON_PASSWORD\",\"api_key\":\"QA_ONLY_JSON_KEY\",\"reason\":\"validation\"}"
+      },
+      "message_state": "nonempty",
+      "expected": {
+        "show_details": true,
+        "must_contain": [
+          "qa_number_i",
+          "invalid integer"
+        ],
+        "must_not_contain": [
+          "QA_ONLY_JSON_PASSWORD",
+          "QA_ONLY_JSON_KEY"
+        ],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "qa_number_i: invalid integer. Context: {\"password\":\"[REDACTED]\",\"api_key\":\"[REDACTED]\",\"reason\":\"validation\"}",
+      "note": "This is a string containing JSON-shaped context, not an object-valued status_message. Redact credentials without discarding the saved validation reason.",
+      "ac": "AC 1, 4, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM20",
+      "title": "Secret in a saved URL fragment",
+      "manager_saved_fields": {
+        "status_message": "qa_number_i: invalid integer. Sample URL: https://YOUR-SERVICE.onrender.com/error-fixtures/sample-url?doc=sample#access_token=QA_ONLY_FRAGMENT_SECRET"
+      },
+      "message_state": "nonempty",
+      "expected": {
+        "show_details": true,
+        "must_contain": [
+          "qa_number_i",
+          "/error-fixtures/sample-url"
+        ],
+        "must_not_contain": [
+          "QA_ONLY_FRAGMENT_SECRET"
+        ],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "qa_number_i: invalid integer. Sample URL: https://YOUR-SERVICE.onrender.com/error-fixtures/sample-url?doc=sample",
+      "note": "Harness-only: a URL fragment is not sent in an HTTP request, so an ordinary crawl cannot make the origin see it. Seed the saved message through the authorized backend path.",
+      "ac": "AC 1, 4, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM21",
+      "title": "Nested percent-encoded URL containing a secret",
+      "manager_saved_fields": {
+        "status_message": "qa_number_i: invalid integer. Sample URL: https://YOUR-SERVICE.onrender.com/error-fixtures/sample-url?return_url=https%3A%2F%2FYOUR-SERVICE.onrender.com%2Ferror-fixtures%2Finvalid-integer%3Ftoken%3DQA_ONLY_NESTED_SECRET&doc=sample"
+      },
+      "message_state": "nonempty",
+      "expected": {
+        "show_details": true,
+        "must_contain": [
+          "qa_number_i",
+          "/error-fixtures/sample-url"
+        ],
+        "must_not_contain": [
+          "QA_ONLY_NESTED_SECRET"
+        ],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "qa_number_i: invalid integer. Sample URL: https://YOUR-SERVICE.onrender.com/error-fixtures/sample-url?doc=sample",
+      "note": "The outer return_url value contains a complete encoded URL. Remove or safely redact the sensitive nested value; do not require one particular redaction marker.",
+      "ac": "AC 1, 4, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM22",
+      "title": "HTML-entity query separator in saved text",
+      "manager_saved_fields": {
+        "status_message": "qa_number_i: invalid integer. Sample URL: https://YOUR-SERVICE.onrender.com/error-fixtures/sample-url?doc=sample&amp;token=QA_ONLY_ENTITY_SECRET"
+      },
+      "message_state": "nonempty",
+      "expected": {
+        "show_details": true,
+        "must_contain": [
+          "qa_number_i",
+          "/error-fixtures/sample-url"
+        ],
+        "must_not_contain": [
+          "QA_ONLY_ENTITY_SECRET"
+        ],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "qa_number_i: invalid integer. Sample URL: https://YOUR-SERVICE.onrender.com/error-fixtures/sample-url?doc=sample",
+      "note": "Treat the saved message as text. A secret is still sensitive when a separator was HTML-escaped upstream; do not interpret the message as HTML.",
+      "ac": "AC 1, 4, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM23",
+      "title": "Percent-encoded secret value",
+      "manager_saved_fields": {
+        "status_message": "qa_number_i: invalid integer. Sample URL: https://YOUR-SERVICE.onrender.com/error-fixtures/sample-url?token=%51%41%5f%4f%4e%4c%59%5f%50%45%52%43%45%4e%54%5f%53%45%43%52%45%54&doc=sample"
+      },
+      "message_state": "nonempty",
+      "expected": {
+        "show_details": true,
+        "must_contain": [
+          "qa_number_i",
+          "/error-fixtures/sample-url"
+        ],
+        "must_not_contain": [
+          "QA_ONLY_PERCENT_SECRET"
+        ],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "qa_number_i: invalid integer. Sample URL: https://YOUR-SERVICE.onrender.com/error-fixtures/sample-url?doc=sample",
+      "note": "The local checker inspects bounded percent/HTML/JSON-unescaped views for known synthetic canaries. This is not a general-purpose secret detector.",
+      "ac": "AC 1, 4, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM24",
+      "title": "Signed URL parameters",
+      "manager_saved_fields": {
+        "status_message": "qa_number_i: invalid integer. Sample URL: https://YOUR-SERVICE.onrender.com/error-fixtures/sample-url?X-Amz-Credential=QA_ONLY_SIGNED_CREDENTIAL&X-Amz-Signature=QA_ONLY_SIGNED_SIGNATURE&X-Amz-Security-Token=QA_ONLY_SIGNED_SESSION&doc=sample"
+      },
+      "message_state": "nonempty",
+      "expected": {
+        "show_details": true,
+        "must_contain": [
+          "qa_number_i",
+          "/error-fixtures/sample-url"
+        ],
+        "must_not_contain": [
+          "QA_ONLY_SIGNED_CREDENTIAL",
+          "QA_ONLY_SIGNED_SIGNATURE",
+          "QA_ONLY_SIGNED_SESSION"
+        ],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "qa_number_i: invalid integer. Sample URL: https://YOUR-SERVICE.onrender.com/error-fixtures/sample-url?doc=sample",
+      "note": "Synthetic signed-URL parameters only; no cloud account is involved. Validate the agreed sensitive-parameter policy, not just a literal token key.",
+      "ac": "AC 1, 4, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM25",
+      "title": "Safe URL text and an ordinary field name",
+      "manager_saved_fields": {
+        "status_message": "Field qa_api_token_count_i: invalid integer. Sample URL: https://YOUR-SERVICE.onrender.com/error-fixtures/invalid-integer?doc=public-sample&category=cardiology"
+      },
+      "message_state": "nonempty",
+      "expected": {
+        "show_details": true,
+        "must_contain": [
+          "qa_api_token_count_i",
+          "invalid integer",
+          "/error-fixtures/invalid-integer"
+        ],
+        "must_not_contain": [],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "Field qa_api_token_count_i: invalid integer. Sample URL: https://YOUR-SERVICE.onrender.com/error-fixtures/invalid-integer?doc=public-sample&category=cardiology",
+      "note": "Do not redact an affected field name merely because it includes token. This case does not require preservation of every harmless query parameter if the approved policy removes the query string.",
+      "ac": "AC 1, 4, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM26",
+      "title": "Already-redacted credentials",
+      "manager_saved_fields": {
+        "status_message": "qa_required_s: missing required value. Authorization: [REDACTED]; password=[REDACTED]."
+      },
+      "message_state": "nonempty",
+      "expected": {
+        "show_details": true,
+        "must_contain": [
+          "qa_required_s",
+          "required"
+        ],
+        "must_not_contain": [],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "qa_required_s: missing required value. Authorization: [REDACTED]; password=[REDACTED].",
+      "note": "Sanitizing an already-redacted message must not restore credentials or damage the field/reason. Exact placeholder spelling is not prescribed.",
+      "ac": "AC 1, 4, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM27",
+      "title": "Unicode in field names and validation reasons",
+      "manager_saved_fields": {
+        "status_message": "Validation failed: qa_café_s; reason: missing value for शीर्षक / 東京. Diagnostic marker: ✓."
+      },
+      "message_state": "nonempty",
+      "expected": {
+        "show_details": true,
+        "must_contain": [
+          "qa_café_s",
+          "missing value",
+          "शीर्षक",
+          "東京"
+        ],
+        "must_not_contain": [],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "Validation failed: qa_café_s; reason: missing value for शीर्षक / 東京. Diagnostic marker: ✓.",
+      "note": "The harness supplies this text independently of schema support for these names. Preserve the characters actually saved; do not invent transliterations.",
+      "ac": "AC 1, 4, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM28",
+      "title": "Literal entities and angle brackets",
+      "manager_saved_fields": {
+        "status_message": "qa_single_s: expected one value. Literal entity: &lt;b&gt;field&lt;/b&gt;; comparison: count < 2 & count > 0."
+      },
+      "message_state": "nonempty",
+      "expected": {
+        "show_details": true,
+        "must_contain": [
+          "qa_single_s",
+          "expected one value",
+          "&lt;b&gt;field&lt;/b&gt;"
+        ],
+        "must_not_contain": [],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "qa_single_s: expected one value. Literal entity: &lt;b&gt;field&lt;/b&gt;; comparison: count < 2 & count > 0.",
+      "note": "Inspect textContent in Studio: entities in saved plain text should not become markup, and HTML escaping used for transport/rendering must not corrupt the displayed original characters.",
+      "ac": "AC 1, 4, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM29",
+      "title": "Markdown and a non-HTTP link remain text",
+      "manager_saved_fields": {
+        "status_message": "qa_single_s: expected one value. **Diagnostic** [not a fix](javascript:void(0)) <strong>literal</strong>."
+      },
+      "message_state": "nonempty",
+      "expected": {
+        "show_details": true,
+        "must_contain": [
+          "qa_single_s",
+          "expected one value"
+        ],
+        "must_not_contain": [],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "qa_single_s: expected one value. **Diagnostic** [not a fix](javascript:void(0)) <strong>literal</strong>.",
+      "note": "No Markdown renderer, message-created strong element or executable link. Inspect the actual DOM; a screenshot alone cannot prove text-only handling.",
+      "ac": "AC 1, 4, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM30",
+      "title": "CRLF, tabs, quotes and a credential",
+      "manager_saved_fields": {
+        "status_message": "Validation failed:\r\n\tqa_number_i: \"invalid integer\".\r\npassword=\"QA_ONLY_CRLF_PASSWORD\""
+      },
+      "message_state": "nonempty",
+      "expected": {
+        "show_details": true,
+        "must_contain": [
+          "qa_number_i",
+          "invalid integer"
+        ],
+        "must_not_contain": [
+          "QA_ONLY_CRLF_PASSWORD"
+        ],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "Validation failed:\r\n\tqa_number_i: \"invalid integer\".\r\npassword=\"[REDACTED]\"",
+      "note": "Preserve readable field/reason text while redacting credentials across line boundaries. CRLF is diagnostic text, not a separate status record.",
+      "ac": "AC 1, 4, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM31",
+      "title": "Long unbroken token and responsive layout",
+      "manager_saved_fields": {
+        "status_message": "qa_number_i: invalid integer. Diagnostic context: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+      },
+      "message_state": "nonempty",
+      "expected": {
+        "show_details": true,
+        "must_contain": [
+          "qa_number_i",
+          "invalid integer"
+        ],
+        "must_not_contain": [],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "qa_number_i: invalid integer. Diagnostic context: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "note": "The 8192-character token is test data, not a declared product limit. Wrap or contain it within the details panel; check the approved truncation rule, keyboard access, mobile width and zoom.",
+      "ac": "AC 1, 4, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM32",
+      "title": "Secret near the end of a long message",
+      "manager_saved_fields": {
+        "status_message": "qa_number_i: invalid integer. Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context  password=QA_ONLY_TAIL_SECRET"
+      },
+      "message_state": "nonempty",
+      "expected": {
+        "show_details": true,
+        "must_contain": [
+          "qa_number_i",
+          "invalid integer"
+        ],
+        "must_not_contain": [
+          "QA_ONLY_TAIL_SECRET"
+        ],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "qa_number_i: invalid integer. Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context Context  password=[REDACTED]",
+      "note": "Inspect the entire frontend-facing API response, not just the visible excerpt. Truncation in Studio must not conceal an unsanitized raw response property.",
+      "ac": "AC 1, 4, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM33",
+      "title": "Literal string null is not JSON null",
+      "manager_saved_fields": {
+        "status_message": "null"
+      },
+      "message_state": "nonempty",
+      "expected": {
+        "show_details": true,
+        "must_contain": [
+          "null"
+        ],
+        "must_not_contain": [],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "null",
+      "note": "The saved value is a nonempty string containing four letters, not null. Under the supplied nonempty-message requirement it is shown as text; confirm any additional placeholder-suppression rule with Product.",
+      "ac": "AC 1, 4, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM34",
+      "title": "Unexpected object-valued message",
+      "manager_saved_fields": {
+        "status_message": {
+          "reason": "qa_number_i invalid",
+          "password": "QA_ONLY_OBJECT_SECRET"
+        }
+      },
+      "message_state": "unexpected_object",
+      "expected": {
+        "show_details": false,
+        "must_contain": [],
+        "must_not_contain": [
+          "QA_ONLY_OBJECT_SECRET"
+        ],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "",
+      "note": "Robustness extension, not an explicit AC: agree the invalid-type contract with Engineering. Proposed expectation is safe omission, preserved guidance and no [object Object], crash or raw-object leak. Not a string-valued saved-message test.",
+      "ac": "AC 1, 4, 6",
+      "scope": "Robustness / contract agreement"
+    },
+    {
+      "id": "SM35",
+      "title": "Unexpected numeric message",
+      "manager_saved_fields": {
+        "status_message": 42
+      },
+      "message_state": "unexpected_number",
+      "expected": {
+        "show_details": false,
+        "must_contain": [],
+        "must_not_contain": [],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "",
+      "note": "Robustness extension requiring contract agreement. Proposed handling is safe omission rather than treating a numeric manager value as a meaningful diagnostic string. No loading error.",
+      "ac": "AC 1, 4, 6",
+      "scope": "Robustness / contract agreement"
+    },
+    {
+      "id": "SM36",
+      "title": "Unexpected Boolean message",
+      "manager_saved_fields": {
+        "status_message": false
+      },
+      "message_state": "unexpected_boolean",
+      "expected": {
+        "show_details": false,
+        "must_contain": [],
+        "must_not_contain": [],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "",
+      "note": "Robustness extension requiring contract agreement. Distinguish false in a malformed status_message from the valid Boolean document value tested in FD25. Proposed handling: safe omission and no loading error.",
+      "ac": "AC 1, 4, 6",
+      "scope": "Robustness / contract agreement"
+    },
+    {
+      "id": "SM37",
+      "title": "Unexpected array-valued message",
+      "manager_saved_fields": {
+        "status_message": [
+          "qa_number_i invalid",
+          "password=QA_ONLY_ARRAY_SECRET"
+        ]
+      },
+      "message_state": "unexpected_array",
+      "expected": {
+        "show_details": false,
+        "must_contain": [],
+        "must_not_contain": [
+          "QA_ONLY_ARRAY_SECRET"
+        ],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "",
+      "note": "Robustness extension requiring contract agreement. Do not join or stringify an unexpected array and leak credentials. Proposed handling is safe omission while retaining existing guidance.",
+      "ac": "AC 1, 4, 6",
+      "scope": "Robustness / contract agreement"
+    },
+    {
+      "id": "SM38",
+      "title": "Malformed sample URL with credentials",
+      "manager_saved_fields": {
+        "status_message": "qa_number_i: invalid integer. Sample URL: https://QA_ONLY_BADURL_USER:QA_ONLY_BADURL_PASSWORD@/broken?token=QA_ONLY_BADURL_TOKEN"
+      },
+      "message_state": "nonempty",
+      "expected": {
+        "show_details": true,
+        "must_contain": [
+          "qa_number_i",
+          "invalid integer"
+        ],
+        "must_not_contain": [
+          "QA_ONLY_BADURL_USER",
+          "QA_ONLY_BADURL_PASSWORD",
+          "QA_ONLY_BADURL_TOKEN"
+        ],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "qa_number_i: invalid integer. Sample URL: [invalid URL removed]",
+      "note": "A failed URL parse must not fall back to returning the raw credential-bearing string. Keep the useful field/reason and apply the agreed malformed-URL replacement policy.",
+      "ac": "AC 1, 4, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM39",
+      "title": "Basic authorization value",
+      "manager_saved_fields": {
+        "status_message": "qa_required_s: missing required value. Authorization: Basic UUFfT05MWV9CQVNJQ19VU0VSOlFBX09OTFlfQkFTSUNfUEFTU1dPUkQ="
+      },
+      "message_state": "nonempty",
+      "expected": {
+        "show_details": true,
+        "must_contain": [
+          "qa_required_s",
+          "required"
+        ],
+        "must_not_contain": [
+          "UUFfT05MWV9CQVNJQ19VU0VSOlFBX09OTFlfQkFTSUNfUEFTU1dPUkQ=",
+          "QA_ONLY_BASIC_USER",
+          "QA_ONLY_BASIC_PASSWORD"
+        ],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "qa_required_s: missing required value. Authorization: [REDACTED]",
+      "note": "The encoded credential is itself sensitive. This checker knows this exact synthetic Basic canary; it does not generally decode arbitrary base64 strings.",
+      "ac": "AC 1, 4, 6",
+      "scope": "Saved-message integration"
+    },
+    {
+      "id": "SM40",
+      "title": "Sensitive-looking field names beside a real fake secret",
+      "manager_saved_fields": {
+        "status_message": "Unknown fields: password_policy_s, api_token_count_i, authorization_mode_s. Diagnostic password=QA_ONLY_NEARBY_PASSWORD."
+      },
+      "message_state": "nonempty",
+      "expected": {
+        "show_details": true,
+        "must_contain": [
+          "password_policy_s",
+          "api_token_count_i",
+          "authorization_mode_s",
+          "Unknown fields"
+        ],
+        "must_not_contain": [
+          "QA_ONLY_NEARBY_PASSWORD"
+        ],
+        "preserve_existing_code_summary_guidance": true
+      },
+      "reference_details": "Unknown fields: password_policy_s, api_token_count_i, authorization_mode_s. Diagnostic password=[REDACTED].",
+      "note": "Preserve field identities from the saved error while removing the nearby credential value. Over-redacting the field names breaks unknown-field diagnosis.",
+      "ac": "AC 1, 2, 6",
+      "scope": "Saved-message integration"
+    }
+  ]
+}

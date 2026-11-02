@@ -1,0 +1,6 @@
+{
+  "note": "Synthetic self-test only. Not a SearchStax response contract.",
+  "data": {
+    "example_details": "Document rejected: field 'qa_number_i' cannot parse an integer. Sample URL: https://YOUR-SERVICE.onrender.com/error-fixtures/sample-url?doc=sample"
+  }
+}

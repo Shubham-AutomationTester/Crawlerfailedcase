@@ -1,0 +1,497 @@
+{
+  "scope": "LOCAL fixture/browser validation only; no SearchStax crawl or Studio product validation.",
+  "checks": [
+    {
+      "name": "XPath FD00 test qaRequired",
+      "passed": true
+    },
+    {
+      "name": "XPath FD00 test qaCategory",
+      "passed": true
+    },
+    {
+      "name": "XPath FD00 test qaNumber",
+      "passed": true
+    },
+    {
+      "name": "XPath FD00 test qaPublished",
+      "passed": true
+    },
+    {
+      "name": "XPath FD00 test qaUnknown",
+      "passed": true
+    },
+    {
+      "name": "XPath FD00 fixed qaRequired",
+      "passed": true
+    },
+    {
+      "name": "XPath FD00 fixed qaCategory",
+      "passed": true
+    },
+    {
+      "name": "XPath FD00 fixed qaNumber",
+      "passed": true
+    },
+    {
+      "name": "XPath FD00 fixed qaPublished",
+      "passed": true
+    },
+    {
+      "name": "XPath FD00 fixed qaUnknown",
+      "passed": true
+    },
+    {
+      "name": "XPath FD01 test qaRequired",
+      "passed": true
+    },
+    {
+      "name": "XPath FD01 test qaCategory",
+      "passed": true
+    },
+    {
+      "name": "XPath FD01 test qaNumber",
+      "passed": true
+    },
+    {
+      "name": "XPath FD01 test qaPublished",
+      "passed": true
+    },
+    {
+      "name": "XPath FD01 test qaUnknown",
+      "passed": true
+    },
+    {
+      "name": "XPath FD01 fixed qaRequired",
+      "passed": true
+    },
+    {
+      "name": "XPath FD01 fixed qaCategory",
+      "passed": true
+    },
+    {
+      "name": "XPath FD01 fixed qaNumber",
+      "passed": true
+    },
+    {
+      "name": "XPath FD01 fixed qaPublished",
+      "passed": true
+    },
+    {
+      "name": "XPath FD01 fixed qaUnknown",
+      "passed": true
+    },
+    {
+      "name": "XPath FD02 test qaRequired",
+      "passed": true
+    },
+    {
+      "name": "XPath FD02 test qaCategory",
+      "passed": true
+    },
+    {
+      "name": "XPath FD02 test qaNumber",
+      "passed": true
+    },
+    {
+      "name": "XPath FD02 test qaPublished",
+      "passed": true
+    },
+    {
+      "name": "XPath FD02 test qaUnknown",
+      "passed": true
+    },
+    {
+      "name": "XPath FD02 fixed qaRequired",
+      "passed": true
+    },
+    {
+      "name": "XPath FD02 fixed qaCategory",
+      "passed": true
+    },
+    {
+      "name": "XPath FD02 fixed qaNumber",
+      "passed": true
+    },
+    {
+      "name": "XPath FD02 fixed qaPublished",
+      "passed": true
+    },
+    {
+      "name": "XPath FD02 fixed qaUnknown",
+      "passed": true
+    },
+    {
+      "name": "XPath FD03 test qaRequired",
+      "passed": true
+    },
+    {
+      "name": "XPath FD03 test qaCategory",
+      "passed": true
+    },
+    {
+      "name": "XPath FD03 test qaNumber",
+      "passed": true
+    },
+    {
+      "name": "XPath FD03 test qaPublished",
+      "passed": true
+    },
+    {
+      "name": "XPath FD03 test qaUnknown",
+      "passed": true
+    },
+    {
+      "name": "XPath FD03 fixed qaRequired",
+      "passed": true
+    },
+    {
+      "name": "XPath FD03 fixed qaCategory",
+      "passed": true
+    },
+    {
+      "name": "XPath FD03 fixed qaNumber",
+      "passed": true
+    },
+    {
+      "name": "XPath FD03 fixed qaPublished",
+      "passed": true
+    },
+    {
+      "name": "XPath FD03 fixed qaUnknown",
+      "passed": true
+    },
+    {
+      "name": "XPath FD04 test qaRequired",
+      "passed": true
+    },
+    {
+      "name": "XPath FD04 test qaCategory",
+      "passed": true
+    },
+    {
+      "name": "XPath FD04 test qaNumber",
+      "passed": true
+    },
+    {
+      "name": "XPath FD04 test qaPublished",
+      "passed": true
+    },
+    {
+      "name": "XPath FD04 test qaUnknown",
+      "passed": true
+    },
+    {
+      "name": "XPath FD04 fixed qaRequired",
+      "passed": true
+    },
+    {
+      "name": "XPath FD04 fixed qaCategory",
+      "passed": true
+    },
+    {
+      "name": "XPath FD04 fixed qaNumber",
+      "passed": true
+    },
+    {
+      "name": "XPath FD04 fixed qaPublished",
+      "passed": true
+    },
+    {
+      "name": "XPath FD04 fixed qaUnknown",
+      "passed": true
+    },
+    {
+      "name": "XPath FD05 test qaRequired",
+      "passed": true
+    },
+    {
+      "name": "XPath FD05 test qaCategory",
+      "passed": true
+    },
+    {
+      "name": "XPath FD05 test qaNumber",
+      "passed": true
+    },
+    {
+      "name": "XPath FD05 test qaPublished",
+      "passed": true
+    },
+    {
+      "name": "XPath FD05 test qaUnknown",
+      "passed": true
+    },
+    {
+      "name": "XPath FD05 fixed qaRequired",
+      "passed": true
+    },
+    {
+      "name": "XPath FD05 fixed qaCategory",
+      "passed": true
+    },
+    {
+      "name": "XPath FD05 fixed qaNumber",
+      "passed": true
+    },
+    {
+      "name": "XPath FD05 fixed qaPublished",
+      "passed": true
+    },
+    {
+      "name": "XPath FD05 fixed qaUnknown",
+      "passed": true
+    },
+    {
+      "name": "XPath FD06 test qaRequired",
+      "passed": true
+    },
+    {
+      "name": "XPath FD06 test qaCategory",
+      "passed": true
+    },
+    {
+      "name": "XPath FD06 test qaNumber",
+      "passed": true
+    },
+    {
+      "name": "XPath FD06 test qaPublished",
+      "passed": true
+    },
+    {
+      "name": "XPath FD06 test qaUnknown",
+      "passed": true
+    },
+    {
+      "name": "XPath FD06 fixed qaRequired",
+      "passed": true
+    },
+    {
+      "name": "XPath FD06 fixed qaCategory",
+      "passed": true
+    },
+    {
+      "name": "XPath FD06 fixed qaNumber",
+      "passed": true
+    },
+    {
+      "name": "XPath FD06 fixed qaPublished",
+      "passed": true
+    },
+    {
+      "name": "XPath FD06 fixed qaUnknown",
+      "passed": true
+    },
+    {
+      "name": "XPath FD07 test qaRequired",
+      "passed": true
+    },
+    {
+      "name": "XPath FD07 test qaCategory",
+      "passed": true
+    },
+    {
+      "name": "XPath FD07 test qaNumber",
+      "passed": true
+    },
+    {
+      "name": "XPath FD07 test qaPublished",
+      "passed": true
+    },
+    {
+      "name": "XPath FD07 test qaUnknown",
+      "passed": true
+    },
+    {
+      "name": "XPath FD07 fixed qaRequired",
+      "passed": true
+    },
+    {
+      "name": "XPath FD07 fixed qaCategory",
+      "passed": true
+    },
+    {
+      "name": "XPath FD07 fixed qaNumber",
+      "passed": true
+    },
+    {
+      "name": "XPath FD07 fixed qaPublished",
+      "passed": true
+    },
+    {
+      "name": "XPath FD07 fixed qaUnknown",
+      "passed": true
+    },
+    {
+      "name": "Eight visible scenario cards",
+      "passed": true
+    },
+    {
+      "name": "Eighteen saved-message choices",
+      "passed": true
+    },
+    {
+      "name": "Desktop dashboard no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "Clipboard fallback selects the exact Start URL",
+      "passed": true
+    },
+    {
+      "name": "Browser source shows exactly two separate category values",
+      "passed": true
+    },
+    {
+      "name": "Document dashboard-return control exists",
+      "passed": true
+    },
+    {
+      "name": "Literal markup not interpreted as DOM in prepared fixture preview",
+      "passed": true
+    },
+    {
+      "name": "Prepared preview preserves literal markup text",
+      "passed": true
+    },
+    {
+      "name": "No harmless probe execution in fixture UI",
+      "passed": true
+    },
+    {
+      "name": "Desktop no page overflow /error-details/scenarios/valid-control",
+      "passed": true
+    },
+    {
+      "name": "Desktop no page overflow /error-details/scenarios/unknown-field",
+      "passed": true
+    },
+    {
+      "name": "Desktop no page overflow /error-details/scenarios/required-missing",
+      "passed": true
+    },
+    {
+      "name": "Desktop no page overflow /error-details/scenarios/single-value",
+      "passed": true
+    },
+    {
+      "name": "Desktop no page overflow /error-details/scenarios/invalid-integer",
+      "passed": true
+    },
+    {
+      "name": "Desktop no page overflow /error-details/scenarios/invalid-date",
+      "passed": true
+    },
+    {
+      "name": "Desktop no page overflow /error-details/scenarios/sample-url",
+      "passed": true
+    },
+    {
+      "name": "Desktop no page overflow /error-details/scenarios/multiple-fields",
+      "passed": true
+    },
+    {
+      "name": "Desktop no page overflow /error-details/messages/SM01",
+      "passed": true
+    },
+    {
+      "name": "Desktop no page overflow /error-details/messages/SM02",
+      "passed": true
+    },
+    {
+      "name": "Desktop no page overflow /error-details/messages/SM03",
+      "passed": true
+    },
+    {
+      "name": "Desktop no page overflow /error-details/messages/SM04",
+      "passed": true
+    },
+    {
+      "name": "Desktop no page overflow /error-details/messages/SM05",
+      "passed": true
+    },
+    {
+      "name": "Desktop no page overflow /error-details/messages/SM06",
+      "passed": true
+    },
+    {
+      "name": "Desktop no page overflow /error-details/messages/SM07",
+      "passed": true
+    },
+    {
+      "name": "Desktop no page overflow /error-details/messages/SM08",
+      "passed": true
+    },
+    {
+      "name": "Desktop no page overflow /error-details/messages/SM09",
+      "passed": true
+    },
+    {
+      "name": "Desktop no page overflow /error-details/messages/SM10",
+      "passed": true
+    },
+    {
+      "name": "Desktop no page overflow /error-details/messages/SM11",
+      "passed": true
+    },
+    {
+      "name": "Desktop no page overflow /error-details/messages/SM12",
+      "passed": true
+    },
+    {
+      "name": "Desktop no page overflow /error-details/messages/SM13",
+      "passed": true
+    },
+    {
+      "name": "Desktop no page overflow /error-details/messages/SM14",
+      "passed": true
+    },
+    {
+      "name": "Desktop no page overflow /error-details/messages/SM15",
+      "passed": true
+    },
+    {
+      "name": "Desktop no page overflow /error-details/messages/SM16",
+      "passed": true
+    },
+    {
+      "name": "Desktop no page overflow /error-details/messages/SM17",
+      "passed": true
+    },
+    {
+      "name": "Desktop no page overflow /error-details/messages/SM18",
+      "passed": true
+    },
+    {
+      "name": "Mobile no page overflow /error-details",
+      "passed": true
+    },
+    {
+      "name": "Mobile no page overflow /error-details/scenarios/single-value",
+      "passed": true
+    },
+    {
+      "name": "Mobile no page overflow /error-details/messages/SM07",
+      "passed": true
+    },
+    {
+      "name": "Mobile no page overflow /error-details/messages/SM10",
+      "passed": true
+    },
+    {
+      "name": "Mobile no page overflow /error-details/messages/SM17",
+      "passed": true
+    },
+    {
+      "name": "Mobile no page overflow /error-fixtures/single-value",
+      "passed": true
+    },
+    {
+      "name": "No fixture-render JavaScript errors",
+      "passed": true
+    }
+  ],
+  "passed": 122,
+  "failed": 0,
+  "product_validation": "NOT RUN",
+  "browser_limitation": "Browser policy blocked direct local URL navigation. HTML/CSS fetched from local server was rendered with set_content. Actual browser navigation/clipboard permission success was not end-to-end tested. HTTP routes and copy fallback were tested separately."
+}

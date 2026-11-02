@@ -1,0 +1,524 @@
+
+> studio-5619-crawl-lab@1.1.0 test
+> node --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: new dashboard and source-data APIs load with noindex protection
+ok 1 - new dashboard and source-data APIs load with noindex protection
+  ---
+  duration_ms: 57.638716
+  type: 'test'
+  ...
+# Subtest: main dashboard links the new lab and preserves creator credit
+ok 2 - main dashboard links the new lab and preserves creator credit
+  ---
+  duration_ms: 4.928922
+  type: 'test'
+  ...
+# Subtest: exact scenario and saved-message counts and unique IDs
+ok 3 - exact scenario and saved-message counts and unique IDs
+  ---
+  duration_ms: 0.296897
+  type: 'test'
+  ...
+# Subtest: FD00 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 4 - FD00 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 8.391416
+  type: 'test'
+  ...
+# Subtest: FD00 setup page has absolute current-host URLs and noindex
+ok 5 - FD00 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 4.082708
+  type: 'test'
+  ...
+# Subtest: FD01 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 6 - FD01 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 7.596198
+  type: 'test'
+  ...
+# Subtest: FD01 setup page has absolute current-host URLs and noindex
+ok 7 - FD01 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 2.265201
+  type: 'test'
+  ...
+# Subtest: FD02 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 8 - FD02 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 2.677272
+  type: 'test'
+  ...
+# Subtest: FD02 setup page has absolute current-host URLs and noindex
+ok 9 - FD02 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 1.571847
+  type: 'test'
+  ...
+# Subtest: FD03 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 10 - FD03 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 2.825404
+  type: 'test'
+  ...
+# Subtest: FD03 setup page has absolute current-host URLs and noindex
+ok 11 - FD03 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 1.51464
+  type: 'test'
+  ...
+# Subtest: FD04 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 12 - FD04 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 9.848661
+  type: 'test'
+  ...
+# Subtest: FD04 setup page has absolute current-host URLs and noindex
+ok 13 - FD04 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 1.791808
+  type: 'test'
+  ...
+# Subtest: FD05 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 14 - FD05 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 4.691326
+  type: 'test'
+  ...
+# Subtest: FD05 setup page has absolute current-host URLs and noindex
+ok 15 - FD05 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 1.373248
+  type: 'test'
+  ...
+# Subtest: FD06 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 16 - FD06 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 2.287956
+  type: 'test'
+  ...
+# Subtest: FD06 setup page has absolute current-host URLs and noindex
+ok 17 - FD06 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 22.449966
+  type: 'test'
+  ...
+# Subtest: FD07 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+ok 18 - FD07 source and fixed documents are crawlable HTTP 200 with valid JSON-LD
+  ---
+  duration_ms: 7.270809
+  type: 'test'
+  ...
+# Subtest: FD07 setup page has absolute current-host URLs and noindex
+ok 19 - FD07 setup page has absolute current-host URLs and noindex
+  ---
+  duration_ms: 3.633692
+  type: 'test'
+  ...
+# Subtest: required source is genuinely absent and fixed variant supplies it
+ok 20 - required source is genuinely absent and fixed variant supplies it
+  ---
+  duration_ms: 3.21364
+  type: 'test'
+  ...
+# Subtest: single-value fixture contains two separate DOM values and array entries
+ok 21 - single-value fixture contains two separate DOM values and array entries
+  ---
+  duration_ms: 1.348981
+  type: 'test'
+  ...
+# Subtest: all saved-message pages escape probes and retain navigation
+ok 22 - all saved-message pages escape probes and retain navigation
+  ---
+  duration_ms: 13.643505
+  type: 'test'
+  ...
+# Subtest: source responses are HEAD-compatible and all new routes reject writes
+ok 23 - source responses are HEAD-compatible and all new routes reject writes
+  ---
+  duration_ms: 12.760986
+  type: 'test'
+  ...
+# Subtest: invalid case and invalid variant are explicit errors
+ok 24 - invalid case and invalid variant are explicit errors
+  ---
+  duration_ms: 4.234075
+  type: 'test'
+  ...
+# Subtest: robots excludes new instruction pages but not new source documents
+ok 25 - robots excludes new instruction pages but not new source documents
+  ---
+  duration_ms: 1.146586
+  type: 'test'
+  ...
+# Subtest: new fixtures do not enter original manifest or sitemaps
+ok 26 - new fixtures do not enter original manifest or sitemaps
+  ---
+  duration_ms: 121.346201
+  type: 'test'
+  ...
+# Subtest: SM01 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 27 - SM01 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.589628
+  type: 'test'
+  ...
+# Subtest: SM02 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 28 - SM02 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.141423
+  type: 'test'
+  ...
+# Subtest: SM03 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 29 - SM03 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.148754
+  type: 'test'
+  ...
+# Subtest: SM04 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 30 - SM04 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.279091
+  type: 'test'
+  ...
+# Subtest: SM05 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 31 - SM05 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.178188
+  type: 'test'
+  ...
+# Subtest: SM06 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 32 - SM06 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.147883
+  type: 'test'
+  ...
+# Subtest: SM07 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 33 - SM07 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.310597
+  type: 'test'
+  ...
+# Subtest: SM08 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 34 - SM08 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.22535
+  type: 'test'
+  ...
+# Subtest: SM09 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 35 - SM09 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.148213
+  type: 'test'
+  ...
+# Subtest: SM10 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 36 - SM10 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.127402
+  type: 'test'
+  ...
+# Subtest: SM11 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 37 - SM11 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.110817
+  type: 'test'
+  ...
+# Subtest: SM12 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 38 - SM12 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.104287
+  type: 'test'
+  ...
+# Subtest: SM13 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 39 - SM13 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.096826
+  type: 'test'
+  ...
+# Subtest: SM14 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 40 - SM14 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.092519
+  type: 'test'
+  ...
+# Subtest: SM15 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 41 - SM15 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.11328
+  type: 'test'
+  ...
+# Subtest: SM16 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 42 - SM16 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.101553
+  type: 'test'
+  ...
+# Subtest: SM17 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 43 - SM17 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.153882
+  type: 'test'
+  ...
+# Subtest: SM18 prepared reference satisfies selected checker assertions (not product acceptance)
+ok 44 - SM18 prepared reference satisfies selected checker assertions (not product acceptance)
+  ---
+  duration_ms: 0.10633
+  type: 'test'
+  ...
+# Subtest: checker rejects missing details for a nonempty saved message
+ok 45 - checker rejects missing details for a nonempty saved message
+  ---
+  duration_ms: 0.256936
+  type: 'test'
+  ...
+# Subtest: checker rejects a non-string details object
+ok 46 - checker rejects a non-string details object
+  ---
+  duration_ms: 0.202826
+  type: 'test'
+  ...
+# Subtest: checker detects raw secret duplication outside the details property
+ok 47 - checker detects raw secret duplication outside the details property
+  ---
+  duration_ms: 0.223357
+  type: 'test'
+  ...
+# Subtest: checker flags stale details for empty-message fixture
+ok 48 - checker flags stale details for empty-message fixture
+  ---
+  duration_ms: 0.188273
+  type: 'test'
+  ...
+# Subtest: checker verifies original code, summary and guidance and fails when changed
+ok 49 - checker verifies original code, summary and guidance and fails when changed
+  ---
+  duration_ms: 0.281264
+  type: 'test'
+  ...
+# Subtest: checker fails setup with unresolved response path or missing preservation baseline
+ok 50 - checker fails setup with unresolved response path or missing preservation baseline
+  ---
+  duration_ms: 0.356807
+  type: 'test'
+  ...
+# Subtest: collector returns 25 unique issues with pages 10, 10, 5
+ok 51 - collector returns 25 unique issues with pages 10, 10, 5
+  ---
+  duration_ms: 53.31152
+  type: 'test'
+  ...
+# Subtest: cursor loop is incomplete, never a healthy empty result
+ok 52 - cursor loop is incomplete, never a healthy empty result
+  ---
+  duration_ms: 21.029087
+  type: 'test'
+  ...
+# Subtest: missing next_cursor field does not silently truncate retrieval
+ok 53 - missing next_cursor field does not silently truncate retrieval
+  ---
+  duration_ms: 5.173811
+  type: 'test'
+  ...
+# Subtest: HTTP 429 and 503 are data retrieval failures, not zero issues
+ok 54 - HTTP 429 and 503 are data retrieval failures, not zero issues
+  ---
+  duration_ms: 7.466744
+  type: 'test'
+  ...
+# Subtest: expired data with empty items is not a clean run
+ok 55 - expired data with empty items is not a clean run
+  ---
+  duration_ms: 6.04294
+  type: 'test'
+  ...
+# Subtest: unknown availability requires review even for a complete empty result
+ok 56 - unknown availability requires review even for a complete empty result
+  ---
+  duration_ms: 9.435289
+  type: 'test'
+  ...
+# Subtest: duplicates, missing URLs and successful URLs appearing are failures
+ok 57 - duplicates, missing URLs and successful URLs appearing are failures
+  ---
+  duration_ms: 0.33175
+  type: 'test'
+  ...
+# Subtest: unknown conditional visibility prevents a premature PASS
+ok 58 - unknown conditional visibility prevents a premature PASS
+  ---
+  duration_ms: 0.384459
+  type: 'test'
+  ...
+# Subtest: filters are preserved across cursors and checked locally
+ok 59 - filters are preserved across cursors and checked locally
+  ---
+  duration_ms: 10.026018
+  type: 'test'
+  ...
+# Subtest: mismatched oracle filters are rejected
+ok 60 - mismatched oracle filters are rejected
+  ---
+  duration_ms: 0.940777
+  type: 'test'
+  ...
+# Subtest: provider parity ignores record order but compares outcomes
+ok 61 - provider parity ignores record order but compares outcomes
+  ---
+  duration_ms: 0.521035
+  type: 'test'
+  ...
+# Subtest: unavailable providers cannot pass parity
+ok 62 - unavailable providers cannot pass parity
+  ---
+  duration_ms: 0.132259
+  type: 'test'
+  ...
+# Subtest: collector scale: 10,005 unique outcomes across 1,001 pages
+ok 63 - collector scale: 10,005 unique outcomes across 1,001 pages
+  ---
+  duration_ms: 874.458849
+  type: 'test'
+  ...
+# Subtest: exactly 15,000 valid + 292 additional unique fixture URLs
+ok 64 - exactly 15,000 valid + 292 additional unique fixture URLs
+  ---
+  duration_ms: 19.025359
+  type: 'test'
+  ...
+# Subtest: profile isolation and boundary counts
+ok 65 - profile isolation and boundary counts
+  ---
+  duration_ms: 0.565642
+  type: 'test'
+  ...
+# Subtest: extended issue scale leaves the valid 15,000 untouched
+ok 66 - extended issue scale leaves the valid 15,000 untouched
+  ---
+  duration_ms: 26.300806
+  type: 'test'
+  ...
+# Subtest: reject invalid environment values
+ok 67 - reject invalid environment values
+  ---
+  duration_ms: 0.526022
+  type: 'test'
+  ...
+# Subtest: dashboard, static assets and health are reachable
+ok 68 - dashboard, static assets and health are reachable
+  ---
+  duration_ms: 50.74455
+  type: 'test'
+  ...
+# Subtest: baseline first, middle and last have unique server-rendered content
+ok 69 - baseline first, middle and last have unique server-rendered content
+  ---
+  duration_ms: 9.466265
+  type: 'test'
+  ...
+# Subtest: invalid IDs and unknown query strings do not create extra valid URLs
+ok 70 - invalid IDs and unknown query strings do not create extra valid URLs
+  ---
+  duration_ms: 25.505227
+  type: 'test'
+  ...
+# Subtest: HEAD has no body and does not count fixture GET observations
+ok 71 - HEAD has no body and does not count fixture GET observations
+  ---
+  duration_ms: 16.1035
+  type: 'test'
+  ...
+# Subtest: all eight persistent HTTP codes stay failures across requests
+ok 72 - all eight persistent HTTP codes stay failures across requests
+  ---
+  duration_ms: 26.631564
+  type: 'test'
+  ...
+# Subtest: retry HEAD does not consume the failure; GET goes 503 then 200
+ok 73 - retry HEAD does not consume the failure; GET goes 503 then 200
+  ---
+  duration_ms: 9.015496
+  type: 'test'
+  ...
+# Subtest: 429 retry returns Retry-After and recovers
+ok 74 - 429 retry returns Retry-After and recovers
+  ---
+  duration_ms: 3.273249
+  type: 'test'
+  ...
+# Subtest: four successful redirect codes lead to existing valid documents
+ok 75 - four successful redirect codes lead to existing valid documents
+  ---
+  duration_ms: 8.511948
+  type: 'test'
+  ...
+# Subtest: broken redirect targets a known 404; redirect cycle has two nodes
+ok 76 - broken redirect targets a known 404; redirect cycle has two nodes
+  ---
+  duration_ms: 23.094938
+  type: 'test'
+  ...
+# Subtest: incremental validators: ETag, weak ETag, Last-Modified and precedence
+ok 77 - incremental validators: ETag, weak ETag, Last-Modified and precedence
+  ---
+  duration_ms: 9.983254
+  type: 'test'
+  ...
+# Subtest: robots, noindex meta and response-header fixtures are real
+ok 78 - robots, noindex meta and response-header fixtures are real
+  ---
+  duration_ms: 2.605083
+  type: 'test'
+  ...
+# Subtest: all encoded, mixed-case, long and query fixtures respond 200
+ok 79 - all encoded, mixed-case, long and query fixtures respond 200
+  ---
+  duration_ms: 4.131372
+  type: 'test'
+  ...
+# Subtest: empty HTML, deliberately invalid PDF MIME and large-body fixtures
+ok 80 - empty HTML, deliberately invalid PDF MIME and large-body fixtures
+  ---
+  duration_ms: 2.561177
+  type: 'test'
+  ...
+# Subtest: delayed endpoint is nonblocking and releases its slot
+ok 81 - delayed endpoint is nonblocking and releases its slot
+  ---
+  duration_ms: 43.759175
+  type: 'test'
+  ...
+# Subtest: admin reset is POST-only and authenticated, and changes boot ID
+ok 82 - admin reset is POST-only and authenticated, and changes boot ID
+  ---
+  duration_ms: 5.145408
+  type: 'test'
+  ...
+# Subtest: manifest and observation validation are deterministic
+ok 83 - manifest and observation validation are deterministic
+  ---
+  duration_ms: 120.071317
+  type: 'test'
+  ...
+# Subtest: HTML-only discovery finds every fixture without visiting the dashboard
+ok 84 - HTML-only discovery finds every fixture without visiting the dashboard
+  ---
+  duration_ms: 158.686481
+  type: 'test'
+  ...
+# Subtest: mixed sitemap shards enumerate every fixture exactly once and escape queries
+ok 85 - mixed sitemap shards enumerate every fixture exactly once and escape queries
+  ---
+  duration_ms: 31.480735
+  type: 'test'
+  ...
+1..85
+# tests 85
+# suites 0
+# pass 85
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1113.760672
